@@ -1,11 +1,15 @@
 /* css/style.css */
 
 body {
-  font-family: serif;
+  font-family: 'Lora', serif;
   margin: 0;
   padding: 0;
   background-color: #fef6fb;
   color: #333;
+}
+
+header {
+    font-family: "Playfair Display";
 }
 
 .navbar {
@@ -26,6 +30,16 @@ body {
   background-color: #e6dcf3;
   padding: 4rem 2rem;
   text-align: center;
+}
+
+section h2 {
+  color: #000;
+  font-family: "Playfair Display";
+  font-size: var(--Title-Large-Size, 22px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: var(--Title-Large-Line-Height, 28px); /* 127.273% */
+  letter-spacing: var(--Title-Large-Tracking, 0px);
 }
 
 .featured .featured-list {
@@ -59,5 +73,8 @@ footer {
 
 .old-price {
   text-decoration: line-through;
+}
+
+.new-price {
   color: #a44;
 }
