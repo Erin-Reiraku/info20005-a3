@@ -9,11 +9,16 @@ body {
 }
 
 header {
+    margin: 0;
     font-family: "Playfair Display";
 }
 
+.container {
+  margin: 1.2rem 1.2rem;
+}
+
 .navbar {
-  background-color: #e8def8;
+  background-color: #EADDFF;
   display: flex;
   justify-content: space-between;
   padding: 1rem 2rem;
@@ -21,14 +26,18 @@ header {
 }
 
 .navbar ul {
+  font-family: "Playfair Display";
   list-style: none;
   display: flex;
+  font-size: var(--Title-Large-Size, 22px);
+  font-weight: 500;
   gap: 1.5rem;
 }
 
 .hero {
   background-color: #e6dcf3;
   padding: 4rem 2rem;
+  border-radius: 1rem;
   text-align: center;
 }
 
@@ -53,7 +62,7 @@ section h2 {
   max-width: 158px;
   height: auto;
   display: block;
-  border-radius: 6px;
+  border-radius: 0.5rem;
 }
 
 .collections .collection-grid {
