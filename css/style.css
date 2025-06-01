@@ -1,16 +1,28 @@
 /* css/style.css */
+:root {
+  --color-primary: #6E6286;
+  --color-primary-hover: #7A6FA0;
+  --color-primary-active: #5A5270;
+
+  --color-secondary: #A998C2;
+  --color-accent: #F6D8E6;
+
+  --color-text: #333333;
+  --color-bg: #fef6fb;
+  --color-navbar-bg: #EADDFF;
+}
 
 body {
   font-family: 'Lora', serif;
   margin: 0;
   padding: 0;
-  background-color: #fef6fb;
+  background-color: var(--color-bg);
   color: #333;
 }
 
 header {
-    margin: 0;
-    font-family: "Playfair Display";
+  margin: 0;
+  font-family: "Playfair Display";
 }
 
 .container {
@@ -23,7 +35,7 @@ header {
   justify-content: center;
   gap: 8px;
 
-  background-color: #6E6286;
+  background-color: var(--color-primary);
   color: #fff;
   padding: 10px 24px;
   border: 1.5px solid #E6E0F2;
@@ -39,12 +51,12 @@ header {
 }
 
 .btn-primary:hover {
-  background-color: #7A6FA0;
+  background-color: var(--color-primary-hover);
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
 .btn-primary:active {
-  background-color: #5A5270;
+  background-color: var(--color-primary-active);
   box-shadow: 0 2px 2px rgba(0,0,0,0.2);
   transform: scale(0.98);
 }
@@ -52,26 +64,70 @@ header {
 .navbar {
   position: sticky; /* stick navbar to support Infinite Scroll */
   top: 0; /* keep stick at the top */
-  background-color: #EADDFF;
+  background-color: var(--color-navbar-bg);
   box-shadow: 0px 4px 10px 5px rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   padding: 0.5rem 2rem;
-  height: 4rem;
+  height: 4.5rem;
   align-items: center;
+}
+
+.navbar .logo {
+  justify-self: start;
+  align-self: center;
+  display: flex;
+  align-items: center; /* ensure logo is relatively at vertical centre */
+}
+
+.navbar .logo img {
+  display: block;
+  height: 100%;
+}
+
+.navbar nav {
+  justify-self: center;
+  align-self: center;
+}
+
+.navbar .icons {
+  justify-self: end;
+  align-self: center;
 }
 
 .navbar ul {
   font-family: "Playfair Display";
   list-style: none;
   display: flex;
-  font-size: var(--Title-Large-Size, 22px);
+  font-size: 22px;
   font-weight: 500;
   gap: 1.5rem;
 }
 
+.navbar ul li a {
+  position: relative;
+  text-decoration: none;
+  color: inherit; /* prevent to use default blue colour for hyperlink */
+}
+
+.navbar ul li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-primary);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.navbar ul li a:hover::after {
+  transform: scaleX(1);
+}
+
 .hero {
-  background-color: #e6dcf3;
   background-image: url('../assets/images/hero-bg.png');
   padding: 6rem 2rem;
   border-radius: 1rem;
@@ -92,7 +148,7 @@ section h2 {
   display: flex;
   justify-content: flex-start;
   gap: 2rem;
-  margin: 2rem;
+  margin: 1rem;
 }
 
 .product {
@@ -120,7 +176,7 @@ section h2 {
 
 footer {
   text-align: left;
-  background-color: #d2c6e8;
+  background-color: var(--color-navbar-bg);
   padding: 1rem;
   margin-top: 2rem;
 }
