@@ -31,7 +31,7 @@ html {
 
 @media (max-width: 768px) {
   html {
-    font-size: 12px; /* Default Mobile */
+    font-size: 14px; /* Default Mobile */
   }
 }
 
@@ -51,6 +51,7 @@ header {
 
 .btn, 
 .badge {
+  /* Use sans-serif Inter for functional UI elements */
   font-family: 'Inter', sans-serif;
 }
 
@@ -129,27 +130,12 @@ header {
   transform: scale(0.98);
 }
 
-@media (max-width: 1024px) {
-  .navbar {
-    height: 4rem;
-  }
-
-  .navbar .nav-links,
-  .navbar .nav-actions {
-    display: none;
-  }
-
-  .navbar .logo img {
-    max-width: 10rem;
-  }
-}
-
 .navbar {
   position: sticky; /* stick navbar to support Infinite Scroll */
   top: 0; /* keep stick at the top */
   background-color: var(--color-navbar-bg);
   box-shadow: 0px 4px 10px 5px rgba(0, 0, 0, 0.1);
-  display: grid;
+  display: grid; /* Grid layout used to balance logo (left), nav links (center), and actions (right) */
   grid-template-columns: 1fr auto 1fr;
   padding: 0.5rem 1rem;
   height: 4.5rem;
@@ -252,6 +238,21 @@ header {
   background-color: var(--color-primary);
 }
 
+@media (max-width: 1024px) {
+  .navbar {
+    height: 4rem;
+  }
+
+  .navbar .nav-links,
+  .navbar .nav-actions {
+    display: none;
+  }
+
+  .navbar .logo img {
+    max-width: 10rem;
+  }
+}
+
 .hero {
   background-image: url('../assets/images/hero-bg.png');
   padding: 6rem 2rem;
@@ -271,28 +272,17 @@ section h2 {
 
 .featured .featured-list {
   display: grid;
+  /* Use auto-fit + minmax to allow grid to wrap items dynamically and keep items centered */
   grid-template-columns: repeat(auto-fit, minmax(12rem, max-content));
   justify-content: center;
   row-gap: 2rem;
   column-gap: 4rem;
 }
 
-@media (max-width: 768px) {
-  .featured .featured-list {
-    grid-template-columns: repeat(2, 1fr);
-    justify-items: center;
-  }
-
-  .featured .product {
-    flex: 1 1 45%;
-    max-width: 45%;
-    box-sizing: border-box;
-  }
-  
-}
 
 .product {
-  width: 200px;
+  /* Fixed width ensures consistent product card sizing across flexible grid layout */
+  width: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -300,10 +290,40 @@ section h2 {
 }
 
 .product-image {
-  max-width: 12rem;
+  width: 12rem;
   height: auto;
   display: block;
   border-radius: 0.5rem;
+}
+
+.product-info {
+  max-width: 14rem;
+  width: 100%;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .featured .featured-list {
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    column-gap: 1rem;
+    padding: 0 0.5rem;
+  }
+
+  .featured .product {
+    flex: 1 1 45%;
+    box-sizing: border-box;
+  }
+
+  .product-image {
+    width: 8rem;
+    height: auto;
+  }
+
+  .product-info {
+    max-width: 12rem;
+    width: 100%;
+  }
 }
 
 .collections .collection-grid {
@@ -313,16 +333,16 @@ section h2 {
   margin: 1rem auto;
 }
 
+.collections .collection-grid img {
+  max-width: 12rem;
+  height: auto;
+}
+
 @media (max-width: 768px) {
   .collections .collection-grid {
     grid-template-columns: repeat(2, 1fr);
     justify-items: center; 
   }
-}
-
-.collections .collection-grid img {
-  max-width: 12rem;
-  height: auto;
 }
 
 footer {
