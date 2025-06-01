@@ -17,7 +17,8 @@
   --color-danger-hover: #871f18;
   --color-danger-active: #75140d;
 
-  --color-text: #333333;
+  --color-hyperlink: #4F4963;
+  --color-hyperlink-hover: var(--color-primary);
   --color-bg: #fef6fb;
   --color-menu-bg: #E6E0F2;
   --color-notification: #9A2B24;
@@ -175,7 +176,7 @@ header {
 .navbar ul li a {
   position: relative;
   text-decoration: none;
-  color: inherit; /* prevent to use default blue colour for hyperlink */
+  color: inherit; /* prevent to use default colour for hyperlink */
 }
 
 .navbar ul li a::after {
@@ -300,6 +301,15 @@ section h2 {
   max-width: 14rem;
   width: 100%;
   text-align: center;
+}
+
+.product-info a {
+  color: var(--color-hyperlink);
+}
+
+.product-info a:hover {
+  color: var(--color-hyperlink-hover);
+  text-decoration: underline;
 }
 
 @media (max-width: 768px) {
