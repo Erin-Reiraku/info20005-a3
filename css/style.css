@@ -17,6 +17,38 @@ header {
   margin: 1.2rem 1.2rem;
 }
 
+.btn-primary {
+  display: inline-flex; /* Dynamic adjust layout in the button */
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  background-color: #6E6286;
+  color: #fff;
+  padding: 10px 24px;
+  border: 1.5px solid #E6E0F2;
+  border-radius: 100px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  font-weight: 600;
+  cursor: pointer;
+  /** transaction animation */
+  transition: background-color 200ms ease, 
+            box-shadow 200ms ease, 
+            transform 100ms ease, 
+            color 200ms ease;
+}
+
+.btn-primary:hover {
+  background-color: #7A6FA0;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.btn-primary:active {
+  background-color: #5A5270;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+  transform: scale(0.98);
+}
+
 .navbar {
   position: sticky; /* stick navbar to support Infinite Scroll */
   top: 0; /* keep stick at the top */
@@ -63,13 +95,19 @@ section h2 {
   margin: 2rem;
 }
 
+.product {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
 
-.product img {
+.product-image {
   max-width: 158px;
   height: auto;
   display: block;
   border-radius: 0.5rem;
-  text-align: center;
 }
 
 .collections .collection-grid {
