@@ -271,8 +271,10 @@ section h2 {
 
 .featured .featured-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, max-content));
+  justify-content: center;
+  row-gap: 2rem;
+  column-gap: 4rem;
 }
 
 @media (max-width: 768px) {
@@ -288,7 +290,6 @@ section h2 {
   }
   
 }
-
 
 .product {
   width: 200px;
