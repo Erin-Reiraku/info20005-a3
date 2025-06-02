@@ -58,7 +58,6 @@ header {
   font-family: 'Inter', sans-serif;
 }
 
-
 .container {
   margin: 1.2rem 1.2rem;
 }
@@ -76,6 +75,25 @@ header {
               box-shadow 200ms ease,
               transform 100ms ease,
               color 200ms ease;
+}
+
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+
+  cursor: pointer;
+  transition:
+    background-color 200ms ease,
+    transform 100ms ease,
+    filter 200ms ease;
+  text-decoration: none;   /* no underline for a tags */
+  color: inherit;          /* inherit SVG currentColor, etc. */
 }
 
 .btn-primary {
@@ -132,9 +150,11 @@ header {
   transform: scale(0.98);
 }
 
+
 .navbar {
   position: sticky; /* stick navbar to support Infinite Scroll */
   top: 0; /* keep stick at the top */
+  z-index: 100; /* Always at the top layer */
   background-color: var(--color-navbar-bg-desktop);
   box-shadow: 0px 4px 10px 5px rgba(0, 0, 0, 0.1);
   display: grid; /* Grid layout used to balance logo (left), nav links (center), and actions (right) */
@@ -245,7 +265,6 @@ header {
   background-color: rgba(255, 255, 255, 0.2);
   border: none;
   padding: 0.5rem;
-  border-radius: 50%;
   cursor: pointer;
   transition: background-color 200ms ease;
 }
@@ -271,10 +290,61 @@ header {
 }
 
 .hero {
+  position: relative;
   background-image: url('../assets/images/hero-bg.png');
-  padding: 6rem 2rem;
-  border-radius: 1rem;
+  padding: 6vw 4vw;
+  border-radius: 2vw;
   text-align: center;
+}
+
+.hero-logo {
+  width: clamp(120px, 30vw, 300px);
+  height: auto;
+  margin-bottom: 2vw;
+}
+
+.hero-logo,
+.hero p {
+  padding-inline: clamp(60px, 14vw, 90px);   /* padding between text and arrow buttons */
+}
+
+.hero-arrow-left {
+  position: absolute;       /* relatively to .hero */
+  left: 20px;
+  top: 50%;                 /* 50% of top */
+  transform: translateY(-50%); /* then move up 50% of its image */
+  width:  clamp(24px, 10vw, 36px);
+  height: clamp(24px, 10vw, 36px);
+  border: none;
+  border-radius: 50%;
+  padding: 0; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 200ms ease, transform 100ms ease;
+}
+
+.hero-arrow-right {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width:  clamp(24px, 10vw, 36px);
+  height: clamp(24px, 10vw, 36px);
+  border: none;
+  border-radius: 50%;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 200ms ease, transform 100ms ease;
+}
+
+.hero-arrow-left:hover,
+.hero-arrow-right:hover {
+  background-color: var(--color-primary-hover);
 }
 
 section h2 {
@@ -391,4 +461,65 @@ footer {
 
 .new-price {
   color: #a44;
+}
+
+.mobile-nav {
+  display: none; /* not show on destop version */
+  position: fixed;
+  bottom: 0; left: 0;
+  width: 100%;
+  height: 58px;
+  background: white;
+  box-shadow: 0 -2px 6px rgba(0,0,0,.12);
+  align-items: center;
+  justify-content: space-evenly;
+  z-index: 95;
+}
+
+.mobile-nav a{
+  position: relative;
+  flex: 1;
+  height: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color .2s ease;
+}
+
+.mobile-nav a:hover{
+  background: var(--color-navbar-actions-hover);
+}
+
+.mobile-nav img{
+  width: 32px;
+  height: 32px;
+}
+
+.mobile-nav a .badge{
+  position:absolute;
+  top: 4px;
+  right: calc(50% - 16px);
+  transform: translateX(50%);
+  min-width: 18px;
+  height: 18px;
+  line-height: 18px;
+  background: var(--color-notification);
+  color: #fff;
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 200ms ease, transform 100ms ease;
+}
+
+@media (max-width: 1024px){
+  body {
+    padding-bottom: 58px; /* add padding for mobile version to fully show the footer */
+  }
+
+  .mobile-nav {
+      display: flex;
+  }
 }
