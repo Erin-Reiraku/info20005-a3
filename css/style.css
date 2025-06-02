@@ -10,7 +10,7 @@
   --color-accent: #F6D8E6;
 
   --color-success: #D6EAD6;
-  --color-success-hover: #c1dec1;
+  --color-success-hover: #030503;
   --color-success-active: #adcfae;
 
   --color-danger: #9A2B24;
@@ -23,7 +23,9 @@
   --color-menu-bg: #E6E0F2;
   --color-notification: #9A2B24;
   --color-button-border: var(--color-menu-bg);
-  --color-navbar-bg: #EADDFF;
+  --color-navbar-bg-desktop: #EADDFF;
+  --color-navbar-actions-hover: var(--color-secondary);
+  --color-navbar-bg-mobile: var(--color-secondary);
 }
 
 html {
@@ -70,7 +72,6 @@ header {
   border-radius: 6.25rem;
   font-weight: 600;
   cursor: pointer;
-  /** transaction animation */ 
   transition: background-color 200ms ease,
               box-shadow 200ms ease,
               transform 100ms ease,
@@ -134,19 +135,19 @@ header {
 .navbar {
   position: sticky; /* stick navbar to support Infinite Scroll */
   top: 0; /* keep stick at the top */
-  background-color: var(--color-navbar-bg);
+  background-color: var(--color-navbar-bg-desktop);
   box-shadow: 0px 4px 10px 5px rgba(0, 0, 0, 0.1);
   display: grid; /* Grid layout used to balance logo (left), nav links (center), and actions (right) */
-  grid-template-columns: 1fr auto 1fr;
-  padding: 0.5rem 1rem;
-  height: 4.5rem;
+  grid-template-columns: auto 1fr auto;
+  padding: 8px 16px;
+  height: 66px;
   align-items: center;
+  transition: background-color 0.3s ease; /* navbar transition from desktop to mobile */
 }
 
 .navbar .logo {
   height: 100%;
   width: auto;
-  max-width: 12rem;
   justify-self: start;
   align-self: center;
   display: flex;
@@ -155,8 +156,9 @@ header {
 
 .navbar .logo img {
   display: block;
-  height: 100%;
-  max-width: 12rem;
+  max-height: 43px;
+  width: auto;
+  height: auto;
 }
 
 .navbar nav {
@@ -208,7 +210,6 @@ header {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.5rem;
   border-radius: 50%;
   transition: background-color 0.2s ease;
 }
@@ -216,8 +217,8 @@ header {
 .navbar .nav-actions a .badge {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   position: absolute;
-  top: 8px;
-  right: 8px;
+  top: 4px;
+  right: 4px;
   min-width: 18px;
   height: 18px;
   background-color: var(--color-notification);
@@ -236,12 +237,27 @@ header {
 }
 
 .navbar .nav-actions a:hover {
-  background-color: var(--color-primary);
+  background-color: var(--color-navbar-actions-hover);
+}
+
+.hamburger {
+  display: none;               /* Only display on mobile or small screens */
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  padding: 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 200ms ease;
+}
+
+.hamburger img {
+  display: block;
+  transition: transform 200ms ease, filter 200ms ease;
 }
 
 @media (max-width: 1024px) {
   .navbar {
-    height: 4rem;
+    background-color: var(--color-navbar-bg-mobile);
   }
 
   .navbar .nav-links,
@@ -249,8 +265,8 @@ header {
     display: none;
   }
 
-  .navbar .logo img {
-    max-width: 10rem;
+  .hamburger {
+    display: block;
   }
 }
 
@@ -357,9 +373,16 @@ section h2 {
 
 footer {
   text-align: left;
-  background-color: var(--color-navbar-bg);
+  background-color: var(--color-navbar-bg-desktop);
   padding: 1rem;
   margin-top: 2rem;
+  transition: background-color 0.3s ease; /* same as navbar */
+}
+
+@media (max-width: 1024px) {
+  footer {
+    background-color: var(--color-navbar-bg-mobile);
+  }
 }
 
 .old-price {
