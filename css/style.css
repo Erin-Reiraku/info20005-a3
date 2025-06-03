@@ -19,14 +19,14 @@
 
   --color-hyperlink: #4F4963;
   --color-hyperlink-hover: var(--color-primary);
-  --color-arrow-btn-hover: var(--color-secondary-hover);
-  --color-arrow-btn-active: var(--color-secondary-active);
+  --color-icon-btn-hover: var(--color-secondary-hover);
+  --color-icon-btn-active: var(--color-secondary-active);
   --color-bg: #fef6fb;
   --color-menu-bg: #E6E0F2;
   --color-notification: #9A2B24;
   --color-button-border: var(--color-menu-bg);
+  --color-navbar-actions-hover: var(--color-secondary-hover);
   --color-navbar-bg-desktop: #EADDFF;
-  --color-navbar-actions-hover: var(--color-secondary);
   --color-navbar-bg-mobile: var(--color-secondary);
 }
 
@@ -70,6 +70,7 @@ header {
   justify-content: center;
   gap: 8px;
   padding: 0.625rem 1.5rem;
+  font-size: 1rem;
   border-radius: 6.25rem;
   font-weight: 600;
   cursor: pointer;
@@ -257,13 +258,22 @@ header {
 
 .hamburger {
   position: fixed;
-  top: 16px;
-  right: 16px;
+  top: 20px;
+  right: 20px;
+  box-sizing: border-box;
   display: none;               /* Only display on mobile or small screens */
   border: none;
-  padding: 0.5rem;
+  padding: 0.25rem;
   cursor: pointer;
-  transition: background-color 200ms ease;
+  transition: box-shadow 200ms ease, transform 100ms ease;
+}
+
+.hamburger:hover {
+  box-shadow: inset 0 0 0 3px var(--color-icon-btn-hover);
+}
+
+.hamburger:active {
+  box-shadow: inset 0 0 0 3px var(--color-icon-btn-active);
 }
 
 .hamburger img {
@@ -273,14 +283,22 @@ header {
 
 .mobile-close {
   position: fixed;
-  top: 16px;
-  right: 16px;
+  top: 20px;
+  right: 20px;
+  box-sizing: border-box;
   display: none;               /* Only display when menu opens */
   border: none;
-  padding: 0.5rem;
+  padding: 0.25rem;
   cursor: pointer;
   z-index: 111;    /* need to higher than mobile menu */
-  transition: background-color 200ms ease;
+}
+
+.mobile-close:hover {
+  box-shadow: inset 0 0 0 3px var(--color-icon-btn-hover);
+}
+
+.hamburger:active {
+  box-shadow: inset 0 0 0 3px var(--color-icon-btn-active);
 }
 
 .mobile-menu {
@@ -394,11 +412,11 @@ header {
 }
 
 .arrow-btn:hover {
-  box-shadow: inset 0 0 0 5px var(--color-arrow-btn-hover);
+  box-shadow: inset 0 0 0 5px var(--color-icon-btn-hover);
 }
 
 .arrow-btn:active {
-  box-shadow: inset 0 0 0 5px var(--color-arrow-btn-active);
+  box-shadow: inset 0 0 0 5px var(--color-icon-btn-active);
 }
 
 .arrow-btn img {
@@ -407,6 +425,7 @@ header {
 }
 
 .hero-arrow-left {
+  display: none;            /* not shown in demo because no js to support */
   position: absolute;       /* relatively to .hero */
   left: 20px;
   top: 50%;                 /* 50% of top */
