@@ -292,11 +292,9 @@ header {
 .mobile-menu {
   display: none;
   top: -100vh;                   /* hide at the top by default */
-  height: 60vh;
   border-bottom-left-radius: 1.5rem;
   border-bottom-right-radius: 1.5rem;
   box-shadow: 0 6px 16px rgba(0,0,0,.15);
-
   position: fixed;
   left: 0;
   width: 100%;
@@ -305,7 +303,7 @@ header {
   z-index: 110;    /* need to higher than navbar */
   display: flex;
   flex-direction: column;
-  padding: 3rem 2rem 5rem;
+  padding: 2rem 2rem 2rem;
   gap: 2.5rem;
 }
 
@@ -316,7 +314,8 @@ header {
 .mobile-menu-links {
   list-style:none; /* cancell default dot point style */
   margin: 0; 
-  padding: 28px 0 0;
+  padding: 0;
+  padding-top: 1.25em; /** additional top padding */
   font-family:"Playfair Display";
   font-size: 2rem;
   font-weight: 500;
