@@ -150,11 +150,10 @@ header {
   transform: scale(0.98);
 }
 
-
 .navbar {
   position: sticky; /* stick navbar to support Infinite Scroll */
   top: 0; /* keep stick at the top */
-  z-index: 100; /* Always at the top layer */
+  z-index: 100; /* At the top layer of regular page */
   background-color: var(--color-navbar-bg-desktop);
   box-shadow: 0px 4px 10px 5px rgba(0, 0, 0, 0.1);
   display: grid; /* Grid layout used to balance logo (left), nav links (center), and actions (right) */
@@ -261,6 +260,9 @@ header {
 }
 
 .hamburger {
+  position: fixed;
+  top: 16px;
+  right: 16px;
   display: none;               /* Only display on mobile or small screens */
   background-color: rgba(255, 255, 255, 0.2);
   border: none;
@@ -272,6 +274,71 @@ header {
 .hamburger img {
   display: block;
   transition: transform 200ms ease, filter 200ms ease;
+}
+
+.mobile-close {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  display: none;               /* Only display when menu opens */
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  z-index: 111;    /* need to higher than mobile menu */
+  transition: background-color 200ms ease;
+}
+
+.mobile-menu {
+  display: none;
+  top: -100vh;                   /* hide at the top by default */
+  height: 60vh;
+  border-bottom-left-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+  box-shadow: 0 6px 16px rgba(0,0,0,.15);
+
+  position: fixed;
+  left: 0;
+  width: 100%;
+  background: var(--color-menu-bg);
+  transition: top .35s ease; /* slide down transition */
+  z-index: 110;    /* need to higher than navbar */
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 2rem 5rem;
+  gap: 2.5rem;
+}
+
+.mobile-menu.is-open{
+  top: 0; /* show mobile menu when opened by hamburger button */
+}
+
+.mobile-menu-links {
+  list-style:none; /* cancell default dot point style */
+  margin: 0; 
+  padding: 28px 0 0;
+  font-family:"Playfair Display";
+  font-size: 2rem;
+  font-weight: 500;
+  display:flex;
+  flex-direction:column;
+  gap:1.5rem;
+}
+
+.mobile-menu-links a{
+  color:inherit;
+  text-decoration:underline;
+}
+
+.mobile-social {
+  margin-top:auto;
+  display:flex;
+  gap:1rem;
+}
+
+.mobile-social img{
+  width:36px;
+  height:36px;
 }
 
 @media (max-width: 1024px) {
@@ -473,7 +540,7 @@ footer {
   box-shadow: 0 -2px 6px rgba(0,0,0,.12);
   align-items: center;
   justify-content: space-evenly;
-  z-index: 95;
+  z-index: 999;
 }
 
 .mobile-nav a{
