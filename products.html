@@ -1,11 +1,16 @@
-<!-- index.html -->
+<!-- products.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lady Sloth</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <!-- Theme Variables (colors, fonts sizing) -->
+  <link rel="stylesheet" href="css/theme.css" />
+  <!-- Reusable Components (buttons, badges, cards, etc.) -->
+  <link rel="stylesheet" href="css/components.css" />
+  <!-- Page Layout (grid, flex, sidebar positioning, etc.) -->
+  <link rel="stylesheet" href="css/layout.css" />
   <!-- Title Fonts: Playfair Display -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
   <!-- Main Fonts: Lora family -->
@@ -33,15 +38,15 @@
       </div>
     </nav>
     <div class="nav-actions">
-      <a href="#"><img src="assets/images/search.svg" alt="Search"></a>
+      <a href="#"><img src="assets/icons/ui/search.svg" alt="Search"></a>
       <a href="#">
-        <img src="assets/images/shopping_cart.svg" alt="Shopping Cart">
+        <img src="assets/icons/ui/shopping_cart.svg" alt="Shopping Cart">
         <span class="badge">1</span>
       </a>
-      <a href="#"><img src="assets/images/account.svg" alt="Account"></a>
+      <a href="#"><img src="assets/icons/ui/account.svg" alt="Account"></a>
     </div>
     <button class="icon-btn hamburger" aria-label="Toggle menu">
-      <img src="assets/images/hamburger.svg" alt="Menu">
+      <img src="assets/icons/ui/hamburger.svg" alt="Menu">
     </button>
   </header>
 
@@ -51,7 +56,7 @@
   <nav class="mobile-menu">
     <!-- MOBILE OFF-CANVAS BUTTON -->
     <button class="icon-btn mobile-close" data-close-menu>
-      <img src="assets/images/mobile-close.svg" alt="Close">
+      <img src="assets/icons/ui/mobile-close.svg" alt="Close">
     </button>
     <ul class="mobile-menu-links">
         <li><a href="index.html">Home</a></li>
@@ -63,29 +68,60 @@
     </ul>
 
     <div class="mobile-social">
-      <a href="#"><img src="assets/images/facebook.svg"  alt="Facebook"></a>
-      <a href="#"><img src="assets/images/instagram.svg" alt="Instagram"></a>
-      <a href="#"><img src="assets/images/mail.svg"      alt="Mail"></a>
+      <a href="#"><img src="assets/icons/ui/facebook.svg"  alt="Facebook"></a>
+      <a href="#"><img src="assets/icons/ui/instagram.svg" alt="Instagram"></a>
+      <a href="#"><img src="assets/icons/ui/mail.svg"      alt="Mail"></a>
     </div>
   </nav>
   <!-- START MAIN -->
-  
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2025 Lady Sloth. All rights reserved.</p>
-  </footer>
+  <main class="container">
+    <!-- BREADCRUMB NAVIGATION -->
+    <div class="bread-crumb">
+      <p><a href="index.html">Home</a> &gt; Lady Sloth</p>
+    </div>
 
+    <!-- CATEGORY ICONS -->
+    <section class="category-bar banner">
+      <h2 class="category-title">All Products</h2>
+      <a href="dresses.html">
+        <img src="assets/icons/categories/all/dresses.png" alt="Dresses">
+      </a>
+      <a href="#">
+        <img src="assets/icons/categories/all/tops.png" alt="Tops">
+      </a>
+      <a href="#">
+        <img src="assets/icons/categories/all/skirts.png" alt="Skirts">
+      </a>
+      <a href="#">
+        <img src="assets/icons/categories/all/accessories.png" alt="Accessories">
+      </a>
+      <a href="#">
+        <img src="assets/icons/categories/all/jewelery.png" alt="Jewelry">
+      </a>
+      <a href="#">
+        <img src="assets/icons/categories/all/outerwear.png" alt="Outerwear">
+      </a>
+      <a href="#">
+        <img src="assets/icons/categories/all/underwear.png" alt="Underwear">
+      </a>
+      <a href="#">
+        <img src="assets/icons/categories/all/goodies.png" alt="Goodies">
+      </a>
+    </section>
+  </main>
+
+  
   <!-- MOBILE BOTTOM NAV -->
   <nav class="mobile-nav">
     <a href="#">
-      <img src="assets/images/search.svg" alt="Search">
+      <img src="assets/icons/ui/search.svg" alt="Search">
     </a>
     <a href="#">
-      <img src="assets/images/shopping_cart.svg" alt="Cart">
+      <img src="assets/icons/ui/shopping_cart.svg" alt="Cart">
       <span class="badge">1</span>
     </a>
     <a href="#">
-      <img src="assets/images/account.svg" alt="Account">
+      <img src="assets/icons/ui/account.svg" alt="Account">
     </a>
   </nav>
   <script src="js/main.js"></script>

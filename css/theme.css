@@ -1,4 +1,5 @@
-/* css/theme.css */
+/* css/theme.css
+   Defines global design tokens: colors, font sizes, and other theme-related variables. */
 :root {
   --color-primary: #6E6286;
   --color-primary-hover: #7A6FA0;

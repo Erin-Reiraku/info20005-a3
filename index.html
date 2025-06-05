@@ -5,8 +5,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lady Sloth</title>
+  <!-- Theme Variables (colors, fonts sizing) -->
   <link rel="stylesheet" href="css/theme.css" />
+  <!-- Reusable Components (buttons, badges, cards, etc.) -->
   <link rel="stylesheet" href="css/components.css" />
+  <!-- Page Layout (grid, flex, sidebar positioning, etc.) -->
   <link rel="stylesheet" href="css/layout.css" />
   <!-- Title Fonts: Playfair Display -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
@@ -35,15 +38,15 @@
       </div>
     </nav>
     <div class="nav-actions">
-      <a href="#"><img src="assets/images/search.svg" alt="Search"></a>
+      <a href="#"><img src="assets/icons/ui/search.svg" alt="Search"></a>
       <a href="#">
-        <img src="assets/images/shopping_cart.svg" alt="Shopping Cart">
+        <img src="assets/icons/ui/shopping_cart.svg" alt="Shopping Cart">
         <span class="badge">1</span>
       </a>
-      <a href="#"><img src="assets/images/account.svg" alt="Account"></a>
+      <a href="#"><img src="assets/icons/ui/account.svg" alt="Account"></a>
     </div>
     <button class="icon-btn hamburger" aria-label="Toggle menu">
-      <img src="assets/images/hamburger.svg" alt="Menu">
+      <img src="assets/icons/ui/hamburger.svg" alt="Menu">
     </button>
   </header>
 
@@ -53,7 +56,7 @@
   <nav class="mobile-menu">
     <!-- MOBILE OFF-CANVAS BUTTON -->
     <button class="icon-btn mobile-close" data-close-menu>
-      <img src="assets/images/mobile-close.svg" alt="Close">
+      <img src="assets/icons/ui/mobile-close.svg" alt="Close">
     </button>
     <ul class="mobile-menu-links">
         <li><a href="index.html">Home</a></li>
@@ -65,24 +68,24 @@
     </ul>
 
     <div class="mobile-social">
-      <a href="#"><img src="assets/images/facebook.svg"  alt="Facebook"></a>
-      <a href="#"><img src="assets/images/instagram.svg" alt="Instagram"></a>
-      <a href="#"><img src="assets/images/mail.svg"      alt="Mail"></a>
+      <a href="#"><img src="assets/icons/ui/facebook.svg"  alt="Facebook"></a>
+      <a href="#"><img src="assets/icons/ui/instagram.svg" alt="Instagram"></a>
+      <a href="#"><img src="assets/icons/ui/mail.svg"      alt="Mail"></a>
     </div>
   </nav>
   <!-- START MAIN -->
   <main class="container">
     <!-- HERO SECTION -->
-    <section class="hero">
+    <section class="hero banner">
+      <!-- HERO CONTROL -->
       <button class="icon-btn arrow-btn hero-arrow-left">
-        <img src="assets/images/left-arrow-btn.svg" alt="Previous Category">
+        <img src="assets/icons/ui/left-arrow-btn.svg" alt="Previous Category">
       </button>
-
-      <img class="hero-logo" src="assets/images/logo.png" alt="Logo">
-      
       <button class="icon-btn arrow-btn hero-arrow-right">
-        <img src="assets/images/right-arrow-btn.svg" alt="Next Category">
+        <img src="assets/icons/ui/right-arrow-btn.svg" alt="Next Category">
       </button>
+      <!-- HERO TEXTS AND BUTTONS -->
+      <img class="hero-logo" src="assets/images/logo.png" alt="Logo">
       <p>From a single handmade dress to a world of elegance.<br />Anyone can be a lovely Lolita... even a sloth!</p>
       <br><a href="products.html" class="btn btn-primary">Shop Now</a><br>
     </section>
@@ -136,14 +139,14 @@
   <!-- MOBILE BOTTOM NAV -->
   <nav class="mobile-nav">
     <a href="#">
-      <img src="assets/images/search.svg" alt="Search">
+      <img src="assets/icons/ui/search.svg" alt="Search">
     </a>
     <a href="#">
-      <img src="assets/images/shopping_cart.svg" alt="Cart">
+      <img src="assets/icons/ui/shopping_cart.svg" alt="Cart">
       <span class="badge">1</span>
     </a>
     <a href="#">
-      <img src="assets/images/account.svg" alt="Account">
+      <img src="assets/icons/ui/account.svg" alt="Account">
     </a>
   </nav>
   <script src="js/main.js"></script>

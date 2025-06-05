@@ -1,5 +1,5 @@
-/* css/layout.css */
-
+/* css/layout.css 
+   Handles page structure and layout such as menu positioning. */
 body {
   font-family: 'Lora', serif;
   margin: 0;
@@ -10,6 +10,16 @@ body {
 header {
   margin: 0;
   font-family: "Playfair Display";
+}
+
+.container {
+  margin: 1.5rem 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin: 1.2rem 1.2rem;
+  }
 }
 
 .navbar {
@@ -253,5 +263,52 @@ footer {
 
   .mobile-nav {
       display: flex;
+  }
+}
+
+/* Product page */
+.category-bar {
+  display: flex;
+  align-items: center; 
+  gap: 1rem;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.category-bar a {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+.category-bar img {
+  display: block;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+}
+
+
+.category-bar.banner {
+  gap: 2rem;
+  padding: 1.5rem 2rem;
+}
+
+
+@media (max-width: 1024px) {
+  .category-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* fix 4 icons per line */
+    justify-items: center;
+    align-items: center;
+  }
+
+  .category-bar.banner {    
+    gap: 1rem;
+    padding: 0;
+  }
+
+  .category-title {
+    display: none;
   }
 }

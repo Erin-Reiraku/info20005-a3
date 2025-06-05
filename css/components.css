@@ -1,4 +1,5 @@
-/* css/components.css */
+/* css/components.css 
+   Contains reusable component styles such as buttons, badges, elements, product cards, and visuals. */
 section h2 {
   color: #000;
   font-family: "Playfair Display";
@@ -15,8 +16,19 @@ section h2 {
   font-family: 'Inter', sans-serif;
 }
 
-.container {
-  margin: 1.2rem 1.2rem;
+.banner {
+  background-image: url('../assets/images/banner-bg.png');
+  border-radius: 1vw;
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .category-bar.banner { /** do not show banner of category on mobile version */
+    background-image: none;
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+  }
 }
 
 .btn {
@@ -270,12 +282,8 @@ section h2 {
 }
 
 .hero {
-  background-image: url('../assets/images/hero-bg.png');
   padding: 6vw 4vw;
-  border-radius: 2vw;
-  text-align: center;
 }
-
 
 .hero-logo {
   width: clamp(160px, 30vw, 300px);
