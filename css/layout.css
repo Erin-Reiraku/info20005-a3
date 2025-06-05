@@ -13,7 +13,7 @@ header {
 }
 
 .container {
-  margin: 1.5rem 1.5rem;
+  margin: 1.5rem 1.5rem; /* Base horizontal spacing for layout container */
 }
 
 @media (max-width: 768px) {
@@ -35,7 +35,7 @@ header {
 }
 
 .navbar ul li a {
-  position: relative;
+  position: relative; /* Enable absolute-positioned effects (like underline) on nav links */
 }
 
 .navbar .logo {
@@ -147,8 +147,9 @@ header {
 }
 
 .hero {
-  position: relative;
+  position: relative; /* Set base for absolute-positioned hero arrows */
 }
+
 
 .hero-arrow-left {
   display: none;            /* not shown in demo because no js to support */
@@ -157,6 +158,7 @@ header {
   top: 50%;                 /* 50% of top */
   transform: translateY(-50%); /* then move up 50% of its image */
 }
+
 
 .hero-arrow-right {
   position: absolute;
@@ -199,7 +201,6 @@ header {
   }
 }
 
-
 .collections .collection-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
@@ -208,7 +209,7 @@ header {
 }
 
 .collections .collection-grid img {
-  max-width: 12rem;
+  max-width: 12rem; /* Ensure collection images do not exceed grid column width */
   height: auto;
 }
 
@@ -277,6 +278,7 @@ footer {
   padding-top: 0;
 }
 
+/* Reset spacing for category links */
 .category-bar a {
   display: inline-block;
   margin: 0;
@@ -290,7 +292,7 @@ footer {
   max-width: 100%;
 }
 
-
+/* Expanded spacing for wide banner-style category bar */
 .category-bar.banner {
   gap: 2rem;
   padding: 1.5rem 2rem;
@@ -337,11 +339,11 @@ footer {
 /* Style for color preview dot */
 .color-option {
   display: flex;
-  align-items: center;
+  align-items: center; /* Align checkbox and label items in a row */
 }
 
 .filter-sidebar .color-option input[type="checkbox"] {
-  margin-right: 0.25rem;
+  margin-right: 0.25rem; /* Align checkbox and label items in a row */
 }
 
 .filter-sidebar .color-dot {
