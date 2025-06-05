@@ -4,6 +4,8 @@ const close  = document.querySelector('.mobile-close');
 const mobileNav = document.querySelector('.mobile-nav');
 const overlay    = document.querySelector('.menu-overlay');
 
+const accordionHeaders = document.querySelectorAll('.accordion-header');
+
 /* handle mobile menu display */
 hamburger.addEventListener('click', () => {
   menu.classList.add('is-open');
@@ -42,4 +44,38 @@ document.addEventListener('click', (e) => {
     close.style.display  = 'none';
     hamburger.style.display = '';
   }
+});
+
+/* Handle click on each accordion header to toggle its panel */
+accordionHeaders.forEach(header => {
+  header.addEventListener('click', () => {
+    const iconOpen   = header.querySelector('.accordion-open');
+    const iconClose  = header.querySelector('.accordion-close');
+    const item = header.parentElement;            // .accordion-item
+    const body = header.nextElementSibling;       // .accordion-body
+
+    // If this panel is already open then close otherwise open it
+    if (item.classList.contains('open')) {
+      item.classList.remove('open');
+      body.style.maxHeight = null;                // collapse body
+      // Show “+” icon, hide “–” icon
+      iconOpen.style.display = '';
+      iconClose.style.display = 'none';
+    } else {
+      // Close any other open panels first
+      accordionHeaders.forEach(h => {
+        const siblingItem = h.parentElement;
+        const siblingBody = h.nextElementSibling;
+        if (siblingItem.classList.contains('open')) {
+          siblingItem.classList.remove('open');
+          siblingBody.style.maxHeight = null;
+        }
+      });
+      item.classList.add('open');
+      body.style.maxHeight = body.scrollHeight + 'px'; // expand body
+      // Show “–” icon, hide “+” icon
+      iconOpen.style.display = 'none';
+      iconClose.style.display = 'flex';
+    }
+  });
 });

@@ -1,6 +1,6 @@
 /* css/components.css 
    Contains reusable component styles such as buttons, badges, elements, product cards, and visuals. */
-section h2 {
+h2 {
   color: #000;
   font-family: "Playfair Display";
   font-size: 1.375rem;
@@ -8,6 +8,14 @@ section h2 {
   font-weight: 500;
   line-height: 28px;
   letter-spacing: 0px;
+}
+
+h3 {
+  margin: 0;
+  font-family: "Playfair Display";
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #000;
 }
 
 .btn, 
@@ -255,7 +263,7 @@ section h2 {
 
 .mobile-menu-links {
   font-family:"Playfair Display";
-  font-size: 2rem;
+  font-size: 1.75rem;
   font-weight: 500;
 }
 
@@ -298,9 +306,9 @@ section h2 {
 
 .product {
   /* Fixed width ensures consistent product card sizing across flexible grid layout */
-  width: auto;
   display: flex;
   flex-direction: column;
+  width: auto;
   align-items: center;
   text-align: center;
 }
@@ -374,4 +382,51 @@ footer {
 .mobile-nav img {
   width: 32px;
   height: 32px;
+}
+
+
+/* Container for each accordion item */
+.accordion-item {
+  overflow: hidden;
+  margin-bottom: 1rem; /* spacing between items */
+  border: 3px solid var(--color-menu-bg);
+}
+
+/* Clickable header: flex to align title and icon */
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background-color: var(--color-menu-bg);
+  cursor: pointer;
+  transition: background-color 200ms ease;
+}
+
+/* Darken header on hover */
+.accordion-header:hover {
+  background-color: var(--color-menu-hover);
+}
+
+/* Simple “+” icon (becomes “-” when open) */
+.accordion-header .icon {
+  width: 1rem;
+  height: 1rem;
+  position: relative;
+  transition: transform 200ms ease;
+}
+
+.accordion-close {
+  display: none;
+}
+
+.accordion-body {
+  max-height: 0; /* Hidden content by default */
+  overflow: hidden;
+  background-color: var(color-accordion-bg);
+  transition: max-height 300ms ease, padding 300ms ease;
+}
+
+.accordion-inner {
+  padding: 0.75rem 0.75rem;
 }

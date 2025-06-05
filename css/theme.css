@@ -24,6 +24,8 @@
   --color-icon-btn-active: var(--color-secondary-active);
   --color-bg: #fef6fb;
   --color-menu-bg: #E6E0F2;
+  --color-menu-hover: var(--color-secondary-hover);
+  --color-accordion-bg: #F7F5FB;
   --color-notification: #9A2B24;
   --color-button-border: var(--color-menu-bg);
   --color-navbar-actions-hover: var(--color-secondary-hover);

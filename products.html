@@ -108,9 +108,120 @@
         <img src="assets/icons/categories/all/goodies.png" alt="Goodies">
       </a>
     </section>
-  </main>
 
-  
+    <!-- Products + Filters Layout -->
+    <div class="products-layout">
+      <!-- Filter Sidebar (desktop only) -->
+      <aside class="filter-sidebar">
+        <!-- Sidebar Heading -->
+        <h3>Filter</h3>
+        <!-- Expandable Filter Categories -->
+        <ul class="filter-list">
+        <!-- Single accordion item -->
+        <div class="accordion-item">
+          <!-- ACCORDION HEADER: CLICK TO EXPAND/HIDE -->
+          <div class="accordion-header">
+            <h3>Price</h3>
+            <!-- “+” BUTTON -->
+              <button class="icon-btn accordion-open">
+                <img src="assets/icons/ui/accordion-open.svg" alt="Expand">
+              </button>
+            <!-- “-” BUTTON -->
+              <button class="icon-btn accordion-close">
+                <img src="assets/icons/ui/accordion-close.svg" alt="Collapse">
+              </button>
+          </div>
+
+          <!-- ACCORDION BODY -->
+          <div class="accordion-body">
+            <div class="accordion-inner">
+              <label><input type="checkbox" name="price" value="0-50"> $0 – $50</label><br>
+              <label><input type="checkbox" name="price" value="51-100"> $51 – $100</label><br>
+              <label><input type="checkbox" name="price" value="101-200"> $101 – $200</label>
+            </div>
+          </div>
+        </div>
+
+      </aside>
+      <!-- Products Content Area -->
+      <section class="products-content">
+        <!-- Sort + Quick Filter Controls -->
+        <div class="products-controls">
+          <!-- Sort By Dropdown -->
+          <label>
+            <select name="sort-by" id="sort-by">
+              <option value="" disabled selected>Sort By</option>
+              <option value="newest">Newest</option>
+              <option value="price-low-high">Price: Low to High</option>
+              <option value="price-high-low">Price: High to Low</option>
+            </select>
+          </label>
+
+          <!-- Quick Filter Dropdown -->
+          <label>
+            <select name="quick-filter" id="quick-filter">
+              <option value="" disabled selected>Quick Filter</option>
+              <option value="popular">Popular</option>
+              <option value="sale">On Sale</option>
+              <option value="newarrival">New Arrival</option>
+            </select>
+          </label>
+
+          <!-- Grid / List View Toggle -->
+          <div class="view-toggle">
+            <button aria-label="Grid view" class="icon-btn">
+              <img src="assets/icons/ui/grid-view.svg" alt="Grid">
+            </button>
+            <button aria-label="List view" class="icon-btn">
+              <img src="assets/icons/ui/list-view.svg" alt="List">
+            </button>
+          </div>
+        </div>
+
+        <!-- Total Count Display -->
+        <p class="total-count">Total: 3</p>
+
+        <!-- Product Grid -->
+        <div class="product-grid">
+          <!-- Product #1 -->
+          <div class="product">
+          <a href="#"><img class="product-image" src="assets/images/products/tea-grandma-jsk2-blue.jpg" alt="Tea Time at Grandma's JSK II Blue"></a>
+          <div class="product-info">
+            <p><a href="#" class="product-link">Tea Time at Grandma's JSK II</a><br>
+            <strong class="price">From $110</strong></p>
+          </div>
+          <!-- Product Card #2 -->
+          <!-- PRODUCT #2 -->
+          <div class="product">
+            <a href="#"><img class="product-image" src="assets/images/products/spooky-macarons-jsk-pink.jpg" alt="My Spooky Macarons JSK Pink"></a>
+            <div class="product-info">
+              <p><a href="#" class="product-link">My Spooky Macarons JSK</a><br>
+              <strong class="price">From </strong>
+              <span class="price old-price">$130</span>
+              <strong class="price new-price">$110</strong></p>
+            </div>
+          </div>
+          <!-- Product Card #3 -->
+          <div class="product">
+            <a href="#"><img class="product-image" src="assets/images/products/galaxy-witch-hair-clip.jpg" alt="Galaxy Witch Hair Clip Various Colours"></a>
+            <div class="product-info">
+              <p><a href="#" class="product-link">Galaxy Witch Hair Clip</a><br>
+              <strong class="price">$25</strong>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- “No more products” Statement -->
+        <p class="no-more">No more products</p>
+      </section>
+    </div>
+  </main>
+  <!-- END MAIN -->
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Lady Sloth. All rights reserved.</p>
+  </footer>
   <!-- MOBILE BOTTOM NAV -->
   <nav class="mobile-nav">
     <a href="#">
