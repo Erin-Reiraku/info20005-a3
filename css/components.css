@@ -18,6 +18,13 @@ h3 {
   color: #000;
 }
 
+hr {
+  border: none;
+  height: 2px;
+  background-color: black;
+  margin: 1rem 0;
+}
+
 .btn, 
 .badge {
   /* Use sans-serif Inter for functional UI elements */
@@ -416,6 +423,7 @@ footer {
   transition: transform 200ms ease;
 }
 
+
 .accordion-close {
   display: none;
 }
@@ -429,4 +437,10 @@ footer {
 
 .accordion-inner {
   padding: 0.75rem 0.75rem;
+}
+
+.color-dot {
+  display: inline-block;
+  border-radius: 50%;
+  border: 1px solid var(--color-menu-bg); /* to see white on white bg */
 }

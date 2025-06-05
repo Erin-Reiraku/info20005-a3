@@ -46,36 +46,123 @@ document.addEventListener('click', (e) => {
   }
 });
 
-/* Handle click on each accordion header to toggle its panel */
-accordionHeaders.forEach(header => {
-  header.addEventListener('click', () => {
-    const iconOpen   = header.querySelector('.accordion-open');
-    const iconClose  = header.querySelector('.accordion-close');
-    const item = header.parentElement;            // .accordion-item
-    const body = header.nextElementSibling;       // .accordion-body
+/* Handle toggle logic for one accordion */
+const handleAccordionToggle = (item, body, iconOpen, iconClose) => {
+  const isOpen = item.classList.contains('open');
 
-    // If this panel is already open then close otherwise open it
-    if (item.classList.contains('open')) {
-      item.classList.remove('open');
-      body.style.maxHeight = null;                // collapse body
-      // Show “+” icon, hide “–” icon
-      iconOpen.style.display = '';
-      iconClose.style.display = 'none';
-    } else {
-      // Close any other open panels first
-      accordionHeaders.forEach(h => {
-        const siblingItem = h.parentElement;
-        const siblingBody = h.nextElementSibling;
-        if (siblingItem.classList.contains('open')) {
-          siblingItem.classList.remove('open');
-          siblingBody.style.maxHeight = null;
-        }
-      });
-      item.classList.add('open');
-      body.style.maxHeight = body.scrollHeight + 'px'; // expand body
-      // Show “–” icon, hide “+” icon
-      iconOpen.style.display = 'none';
-      iconClose.style.display = 'flex';
-    }
+  if (isOpen) {
+    
+    item.classList.remove('open');
+    body.style.maxHeight = null; // collapse body
+    iconOpen.style.display = '';
+    iconClose.style.display = 'none';
+  } else {
+    // Show “–” icon, hide “+” icon
+    item.classList.add('open');
+    body.style.maxHeight = body.scrollHeight + 'px';
+    iconOpen.style.display = 'none';
+    iconClose.style.display = 'flex';
+  }
+};
+
+/* Handle dynamically create single accordion */
+const createAccordionItem = (title, name, options) => {
+  const item = document.createElement('div');
+  item.className = 'accordion-item';
+
+  // Accordion header: title + icons
+  item.innerHTML = `
+    <div class="accordion-header">
+      <h3>${title}</h3>
+      <button class="icon-btn accordion-open">
+        <img src="assets/icons/ui/accordion-open.svg" alt="Expand">
+      </button>
+      <button class="icon-btn accordion-close" style="display:none;">
+        <img src="assets/icons/ui/accordion-close.svg" alt="Collapse">
+      </button>
+    </div>
+    <div class="accordion-body">
+      <div class="accordion-inner">
+        ${options.map(opt => `
+          <label class="color-option">
+            <input type="checkbox" name="${name}" value="${opt.value}">
+            ${opt.colorCode
+              ? `<span class="color-label"><span class="color-dot" style="background-color: ${opt.colorCode}"></span>${opt.label}</span>`
+              : `<span class="color-label">${opt.label}</span>`}
+          </label>
+        `).join('')}
+      </div>
+    </div>
+  `;
+
+  // Bind click event to toggle this accordion
+  const header     = item.querySelector('.accordion-header');
+  const body       = item.querySelector('.accordion-body');
+  const iconOpen   = item.querySelector('.accordion-open');
+  const iconClose  = item.querySelector('.accordion-close');
+
+  header.addEventListener('click', () => {
+    handleAccordionToggle(item, body, iconOpen, iconClose);
   });
-});
+
+  return item;
+};
+
+/* Data definition for accordion groups */
+const filters = [
+  {
+    title: "Price",
+    name: "price",
+    options: [
+      { label: "$0 - $50", value: "0-50" },
+      { label: "$51 - $100", value: "51-100" },
+      { label: "$101 - $200", value: "101-200" },
+      { label: "$201 - $300", value: "201-300" },
+      { label: "$300+", value: "300+" }
+    ]
+  },
+  {
+    title: "Availability",
+    name: "availability",
+    options: [
+      { label: "In Stock", value: "in-stock" },
+      { label: "Pre-order", value: "pre-order" },
+      { label: "Sold Out", value: "sold-out" }
+    ]
+  },
+  {
+    title: "Size",
+    name: "size",
+    options: [
+      { label: "S", value: "s" },
+      { label: "M", value: "m" },
+      { label: "L", value: "l" },
+      { label: "XL", value: "xl" },
+      { label: "XXL+", value: "xxl" },
+      { label: "Custom Size", value: "custom" }
+    ]
+  },
+  {
+    title: "Colour",
+    name: "colour",
+    options: [
+    { label: "Black", value: "black", colorCode: "#000000" },
+    { label: "White", value: "white", colorCode: "#ffffff" },
+    { label: "Pink", value: "pink", colorCode: "#D2AAAF" },
+    { label: "Blue", value: "blue", colorCode: "#385E93" }
+    ]
+  },
+  {
+    title: "Collection",
+    name: "collection",
+    options: [
+      { label: "Tea Time at Grandma's", value: "tea-time-grandmas" },
+      { label: "Spooky Gotchi", value: "spooky-gotchi" },
+      { label: "Galaxy Witch", value: "galaxy-witch" }
+    ]
+  }
+];
+
+/* Inject all accordion filters into the sidebar */
+const sidebar = document.getElementById('filter-accordion');
+filters.forEach(f => sidebar.appendChild(createAccordionItem(f.title, f.name, f.options)));
