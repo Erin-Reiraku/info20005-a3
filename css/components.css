@@ -1,0 +1,369 @@
+/* css/components.css */
+section h2 {
+  color: #000;
+  font-family: "Playfair Display";
+  font-size: 1.375rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 28px;
+  letter-spacing: 0px;
+}
+
+.btn, 
+.badge {
+  /* Use sans-serif Inter for functional UI elements */
+  font-family: 'Inter', sans-serif;
+}
+
+.container {
+  margin: 1.2rem 1.2rem;
+}
+
+.btn {
+  display: inline-flex; /* Dynamic adjust layout in the button */
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0.625rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 6.25rem;
+  cursor: pointer;
+  text-decoration: none;   /* no underline for <a> tags */
+  transition: background-color 200ms ease,
+              box-shadow 200ms ease,
+              transform 100ms ease,
+              color 200ms ease;
+}
+
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  text-decoration: none;   /* no underline for <a> tags */
+  color: inherit;          /* inherit SVG currentColor, etc. */
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #fff;
+  border: 1.5px solid var(--color-button-border);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-hover);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.btn-primary:active {
+  background-color: var(--color-primary-active);
+  box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+  transform: scale(0.98);
+}
+
+.btn-secondary {
+  background-color: var(--color-secondary);
+  color: #fff;
+  border: 1.5px solid var(--color-button-border);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-secondary-hover);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.btn-secondary:active {
+  background-color: var(--color-secondary-active);
+  box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+  transform: scale(0.98);
+}
+
+.btn-danger {
+  background-color: var(--color-danger);
+  color: #fff;
+  border: 1.5px solid var(--color-button-border);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.btn-danger:hover {
+  background-color: var(--color-danger-hover);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.btn-danger:active {
+  background-color: var(--color-danger-active);
+  box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+  transform: scale(0.98);
+}
+
+.arrow-btn {
+  padding: 0; 
+  border: none;
+  box-sizing: border-box;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: box-shadow 200ms ease, transform 100ms ease;
+}
+
+.arrow-btn:hover {
+  box-shadow: inset 0 0 0 5px var(--color-icon-btn-hover);
+}
+
+.arrow-btn:active {
+  box-shadow: inset 0 0 0 5px var(--color-icon-btn-active);
+}
+
+.arrow-btn img {
+  object-fit: cover;
+  display: block;
+}
+
+.badge {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  min-width: 18px;
+  height: 18px;
+  background-color: var(--color-notification);
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 50%; /* make it round */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar {
+  background-color: var(--color-navbar-bg-desktop);
+  box-shadow: 0px 4px 10px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .nav-links ul {
+  font-family: "Playfair Display";
+  list-style: none;
+  font-size: 1.375rem;
+  font-weight: 500;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: inherit; /* prevent to use default colour for hyperlink */
+}
+
+.navbar ul li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-primary);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.navbar ul li a:hover::after {
+  transform: scaleX(1);
+}
+
+.navbar .nav-actions a {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+}
+
+.navbar .nav-actions a img {
+  width: 32px;
+  height: 32px;
+}
+
+.navbar .nav-actions a:hover {
+  background-color: var(--color-navbar-actions-hover);
+}
+
+@media (max-width: 1024px) {
+  .navbar {
+    background-color: var(--color-navbar-bg-mobile);
+  }
+}
+
+.hamburger {
+  border: none;
+  padding: 0.25rem;
+  cursor: pointer;
+  transition: box-shadow 200ms ease, transform 100ms ease;
+}
+
+.hamburger:hover {
+  box-shadow: inset 0 0 0 3px var(--color-icon-btn-hover);
+}
+
+.hamburger:active {
+  box-shadow: inset 0 0 0 3px var(--color-icon-btn-active);
+}
+
+.hamburger img {
+  display: block;
+}
+
+.mobile-close {
+  border: none;
+  padding: 0.25rem;
+  cursor: pointer;
+  transition: box-shadow 200ms ease, transform 100ms ease;
+}
+
+.mobile-close:hover {
+  box-shadow: inset 0 0 0 3px var(--color-icon-btn-hover);
+}
+
+.mobile-menu {
+  box-shadow: 0 6px 16px rgba(0,0,0,.15);
+  background: var(--color-menu-bg);
+  padding: 2rem 2rem 2rem;
+  gap: 2.5rem;
+}
+
+.mobile-menu-links {
+  font-family:"Playfair Display";
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.mobile-menu-links a{
+  color:inherit;
+  text-decoration:underline;
+}
+
+.mobile-social img{
+  width:36px;
+  height:36px;
+}
+
+.hamburger:hover {
+  box-shadow: inset 0 0 0 3px var(--color-icon-btn-hover);
+}
+
+.hamburger:active {
+  box-shadow: inset 0 0 0 3px var(--color-icon-btn-active);
+}
+
+.hamburger img {
+  display: block;
+}
+
+.hero {
+  background-image: url('../assets/images/hero-bg.png');
+  padding: 6vw 4vw;
+  border-radius: 2vw;
+  text-align: center;
+}
+
+
+.hero-logo {
+  width: clamp(160px, 30vw, 300px);
+  height: auto;
+  margin-bottom: 2vw;
+}
+
+.hero-logo,
+.hero p {
+  padding-inline: clamp(60px, 14vw, 90px);   /* padding between text and arrow buttons */
+}
+
+.product {
+  /* Fixed width ensures consistent product card sizing across flexible grid layout */
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.product-image {
+  width: 12rem;
+  height: auto;
+  display: block;
+  border-radius: 0.5rem;
+}
+
+.product-info {
+  max-width: 14rem;
+  width: 100%;
+  text-align: center;
+}
+
+.product-info a {
+  color: var(--color-hyperlink);
+}
+
+.product-info a:hover {
+  color: var(--color-hyperlink-hover);
+  text-decoration: underline;
+}
+
+.old-price {
+  text-decoration: line-through;
+}
+
+.new-price {
+  color: var(--color-notification);
+}
+
+footer {
+  background-color: var(--color-navbar-bg-desktop);
+  transition: background-color 0.3s ease; /* same as navbar */
+}
+
+@media (max-width: 1024px) {
+  footer {
+    background-color: var(--color-navbar-bg-mobile);
+  }
+}
+
+.mobile-nav {
+  background: white;
+  box-shadow: 0 -2px 6px rgba(0,0,0,.12);
+}
+
+.mobile-nav a{
+  transition: background-color .2s ease;
+}
+
+.mobile-nav a:hover{
+  background: var(--color-navbar-actions-hover);
+}
+
+.mobile-nav a .badge {
+  background: var(--color-notification);
+  color: #fff;
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 200ms ease, transform 100ms ease;
+}
+
+.mobile-nav img {
+  width: 32px;
+  height: 32px;
+}

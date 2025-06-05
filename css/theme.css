@@ -1,0 +1,42 @@
+/* css/theme.css */
+:root {
+  --color-primary: #6E6286;
+  --color-primary-hover: #7A6FA0;
+  --color-primary-active: #5A5270;
+
+  --color-secondary: #A998C2;
+  --color-secondary-hover: #bbaed0;
+  --color-secondary-active: #9985b0;
+  --color-accent: #F6D8E6;
+
+  --color-success: #D6EAD6;
+  --color-success-hover: #030503;
+  --color-success-active: #adcfae;
+
+  --color-danger: #9A2B24;
+  --color-danger-hover: #871f18;
+  --color-danger-active: #75140d;
+
+  --color-hyperlink: #4F4963;
+  --color-hyperlink-hover: var(--color-primary);
+  --color-icon-btn-hover: var(--color-secondary-hover);
+  --color-icon-btn-active: var(--color-secondary-active);
+  --color-bg: #fef6fb;
+  --color-menu-bg: #E6E0F2;
+  --color-notification: #9A2B24;
+  --color-button-border: var(--color-menu-bg);
+  --color-navbar-actions-hover: var(--color-secondary-hover);
+  --color-navbar-bg-desktop: #EADDFF;
+  --color-navbar-bg-mobile: var(--color-secondary);
+}
+
+html {
+  font-size: 16px; /* Default Desktop */
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 14px; /* Default Mobile */
+  }
+}
+
