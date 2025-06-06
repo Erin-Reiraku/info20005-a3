@@ -125,37 +125,29 @@
         <div class="products-controls">
           <!-- Sort By Dropdown -->
           <label>
-            <select name="sort-by" id="sort-by">
-              <option value="" disabled selected>Sort By</option>
-              <option value="newest">Newest</option>
-              <option value="price-low-high">Price: Low to High</option>
-              <option value="price-high-low">Price: High to Low</option>
+          <select name="sort-by" id="sort-by" class="dropdown">
+              <option value="" selected>Sort By</option>
             </select>
           </label>
-
           <!-- Quick Filter Dropdown -->
           <label>
-            <select name="quick-filter" id="quick-filter">
-              <option value="" disabled selected>Quick Filter</option>
-              <option value="popular">Popular</option>
-              <option value="sale">On Sale</option>
-              <option value="newarrival">New Arrival</option>
+            <select name="quick-filter" id="quick-filter" class="dropdown">
+              <option value="" selected>Quick Filter</option>
             </select>
           </label>
-
           <!-- Grid / List View Toggle -->
           <div class="view-toggle">
             <button aria-label="Grid view" class="icon-btn">
-              <img src="assets/icons/ui/grid-view.svg" alt="Grid">
+              <img src="assets/icons/ui/grid-active.svg" alt="Grid View">
             </button>
             <button aria-label="List view" class="icon-btn">
-              <img src="assets/icons/ui/list-view.svg" alt="List">
+              <img src="assets/icons/ui/list-inactive.svg" alt="List View">
             </button>
           </div>
         </div>
 
         <!-- Total Count Display -->
-        <p class="total-count">Total: 3</p>
+        <p class="total-count meta-text">Total: 3</p>
 
         <!-- Product Grid -->
         <div class="product-grid">
@@ -189,8 +181,8 @@
           </div>
         </div>
 
-        <!-- “No more products” Statement -->
-        <p class="no-more">No more products</p>
+        <!-- “No more products” Statement when reach the bottom -->
+        <p class="no-more meta-text">No more products</p>
       </section>
     </div>
   </main>
