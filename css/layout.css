@@ -68,9 +68,7 @@ header {
 }
 
 .hamburger {
-  position: fixed;
-  top: 20px;
-  right: 20px;
+  position: static;
   box-sizing: border-box;
   display: none;               /* Only display on mobile or small screens */
 }
@@ -78,7 +76,7 @@ header {
 .mobile-close {
   position: fixed;
   top: 20px;
-  right: 20px;
+  right: 16px;
   box-sizing: border-box;
   display: none;               /* Only display when menu opens */
   z-index: 111;    /* need to higher than mobile menu */
@@ -292,6 +290,7 @@ footer {
 .category-bar.banner {
   gap: 2rem;
   padding: 1.5rem 2rem;
+  margin-block-end: 2rem;
 }
 
 .category-bar.banner h1 {
@@ -303,6 +302,7 @@ footer {
   display: none;
 }
 
+
 @media (max-width: 1024px) {
   .category-bar {
     display: grid;
@@ -310,10 +310,12 @@ footer {
     justify-items: center;
     align-items: center;
   }
+  
 
   .category-bar.banner {    
     gap: 1rem;
     padding: 1rem 1rem;
+    margin-block-end: 0;
   }
 
   .category-bar > h1 {
@@ -403,3 +405,5 @@ footer {
     box-sizing: border-box;
   }
 }
+
+
