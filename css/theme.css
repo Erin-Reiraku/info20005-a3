@@ -18,6 +18,14 @@
   --color-danger-hover: #871f18;
   --color-danger-active: #75140d;
 
+  --color-disabled-bg:#D6C9EA;
+  --color-disabled-text:#C0BCD0;
+
+  --color-badge-text: #4F4963;
+  --color-badge-popular: #C5B2E1;
+  --color-badge-sale: #E9A3A3;
+  --color-badge-reservation: #C6BCCF;
+
   --color-hyperlink: #4F4963;
   --color-hyperlink-hover: var(--color-primary);
 

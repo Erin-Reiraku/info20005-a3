@@ -150,7 +150,6 @@ header {
 
 
 .hero-arrow-left {
-  display: none;            /* not shown in demo because no js to support */
   position: absolute;       /* relatively to .hero */
   left: 3vw;
   top: 50%;                 /* 50% of top */
@@ -246,7 +245,7 @@ footer {
 }
 
 
-.mobile-nav a .badge{
+.mobile-nav a .dot{
   position:absolute;
   top: 4px;
   right: calc(50% - 16px);
