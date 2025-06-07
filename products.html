@@ -1,163 +1,163 @@
 <!-- products.html -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lady Sloth</title>
-  <!-- Theme Variables (colors, fonts sizing) -->
-  <link rel="stylesheet" href="css/theme.css" />
-  <!-- Reusable Components (buttons, dots, cards, etc.) -->
-  <link rel="stylesheet" href="css/components.css" />
-  <!-- Page Layout (grid, flex, sidebar positioning, etc.) -->
-  <link rel="stylesheet" href="css/layout.css" />
-  <!-- Title Fonts: Playfair Display -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
-  <!-- Main Fonts: Lora family -->
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;700&display=swap" rel="stylesheet">
-  <!-- Functional Fonts: Inter -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-</head>
-<body>
-  <!-- HEADER -->
-  <script src="js/header.js"></script>
-  <!-- START MAIN -->
-  <main class="container">
-    <!-- BREADCRUMB NAVIGATION -->
-    <div class="bread-crumb">
-      <p><a href="index.html">Home</a> &gt; Lady Sloth</p>
-    </div>
-    <!-- CATEGORY ICONS -->
-    <section class="category-bar banner">
-      <!-- ON BIG SCREENS TITLE SHOWS IN BANNER -->
-      <h1>All Products</h1>
-      <a href="#">
-        <img src="assets/icons/categories/all/dresses.png" alt="Dresses">
-      </a>
-      <a href="#">
-        <img src="assets/icons/categories/all/tops.png" alt="Tops">
-      </a>
-      <a href="#">
-        <img src="assets/icons/categories/all/skirts.png" alt="Skirts">
-      </a>
-      <a href="#">
-        <img src="assets/icons/categories/all/accessories.png" alt="Accessories">
-      </a>
-      <a href="#">
-        <img src="assets/icons/categories/all/jewelery.png" alt="Jewelry">
-      </a>
-      <a href="#">
-        <img src="assets/icons/categories/all/outerwear.png" alt="Outerwear">
-      </a>
-      <a href="#">
-        <img src="assets/icons/categories/all/underwear.png" alt="Underwear">
-      </a>
-      <a href="#">
-        <img src="assets/icons/categories/all/goodies.png" alt="Goodies">
-      </a>
-    </section>
-    <!-- Products + Filters Layout -->
-    <div class="products-layout">
-      <!-- Filter Sidebar (desktop only) -->
-      <aside class="filter-sidebar">
-        <!-- Sidebar Heading -->
-        <h3>Filter</h3>
-        <hr>
-        <!-- Expandable Filter Categories -->
-        <ul class="filter-list">
-        <!-- ACCORDION ITEMS (DYNAMICALLY RENDERED BY JS) -->
-        <div id="filter-accordion"></div>
-      </aside>
-      <!-- ON SMALLER SCREENS TITLE SHOWS IN BANNER -->
-      <h1 class="category-mobile">All Products</h1>
-      <!-- Products Content Area -->
-      <section class="products-content">
-        <!-- Sort + Quick Filter Controls -->
-        <div class="products-controls">
-          <!-- Sort By Dropdown -->
-          <label>
-            <select name="sort-by" id="sort-by" class="dropdown">
-              <option value="" selected disabled>Sort By</option>
-              <option value="price-low-high">Price: Low to High</option>
-              <option value="price-high-low">Price: High to Low</option>
-              <option value="name-a-z">Name: A-Z</option>
-              <option value="name-z-a">Name: Z-A</option>
-            </select>
-          </label>
-          <!-- Quick Filter Dropdown -->
-          <label>
-              <select name="quick-filter" id="quick-filter" class="dropdown">
-                <option value="" selected disabled>Quick Filter</option>
-                <option value="popular">Popular</option>
-                <option value="sale">Sale</option>
-                <option value="pre-order">Pre-order</option>
-            </select>
-          </label>
-          <!-- Grid / List View Toggle -->
-          <div class="view-toggle">
-            <button aria-label="Grid view" class="icon-btn">
-              <img src="assets/icons/ui/grid-active.svg" alt="Grid View">
-            </button>
-            <button aria-label="List view" class="icon-btn">
-              <img src="assets/icons/ui/list-inactive.svg" alt="List View">
-            </button>
-          </div>
-        </div>
-
-        <!-- Total Count Display -->
-        <p class="total-count meta-text">Total: 3</p>
-
-        <!-- Product Grid -->
-        <div class="product-grid">
-          <!-- Product #1 -->
-          <div class="product">
-            <div class="product-image-wrapper">
-              <a href="product-tea-time.html"><img class="product-image" src="assets/images/products/tea-grandma-jsk2-blue.jpg" alt="Tea Time at Grandma's JSK II Blue"></a>
-              <span class="badge badge-popular">Popular</span>
-            </div>
-            <div class="product-info">
-              <p><a href="product-tea-time.html" class="product-link">Tea Time at Grandma's JSK II</a><br>
-              <strong class="price">From $110</strong></p>
-            </div>
-          </div>
-
-          <!-- Product #2 -->
-          <div class="product">
-            <div class="product-image-wrapper">
-              <a href="#"><img class="product-image" src="assets/images/products/spooky-macarons-jsk-pink.jpg" alt="My Spooky Macarons JSK Pink"></a>
-              <span class="badge badge-sale">Sale</span>
-            </div>
-            <div class="product-info">
-              <p><a href="#" class="product-link">My Spooky Macarons JSK</a><br>
-              <strong class="price">From </strong>
-              <span class="price old-price">$130</span>
-              <strong class="price new-price">$110</strong></p>
-            </div>
-          </div>
-
-          <!-- Product #3 -->
-          <div class="product">
-            <div class="product-image-wrapper">
-              <a href="#"><img class="product-image" src="assets/images/products/galaxy-witch-hair-clip.jpg" alt="Galaxy Witch Hair Clip Various Colours"></a>
-              <span class="badge badge-preorder">Pre-order</span>
-            </div>
-            <div class="product-info">
-              <p><a href="#" class="product-link">Galaxy Witch Hair Clip</a><br>
-              <strong class="price">$25</strong></p>
-            </div>
-          </div>
-        </div>
-
-        <!-- “No more products” Statement when reach the bottom -->
-        <p class="no-more meta-text">No more products</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lady Sloth</title>
+    <!-- Theme Variables (colors, fonts sizing) -->
+    <link rel="stylesheet" href="css/theme.css" />
+    <!-- Reusable Components (buttons, dots, cards, etc.) -->
+    <link rel="stylesheet" href="css/components.css" />
+    <!-- Page Layout (grid, flex, sidebar positioning, etc.) -->
+    <link rel="stylesheet" href="css/layout.css" />
+    <!-- Title Fonts: Playfair Display -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Main Fonts: Lora family -->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Functional Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <!-- HEADER -->
+    <script src="js/header.js"></script>
+    <!-- START MAIN -->
+    <main class="container">
+      <!-- BREADCRUMB NAVIGATION -->
+      <div class="bread-crumb">
+        <p><a href="index.html">Home</a> &gt; Lady Sloth</p>
+      </div>
+      <!-- CATEGORY ICONS -->
+      <section class="category-bar banner">
+        <!-- ON BIG SCREENS TITLE SHOWS IN BANNER -->
+        <h1>All Products</h1>
+        <a href="#">
+          <img src="assets/icons/categories/all/dresses.png" alt="Dresses">
+        </a>
+        <a href="#">
+          <img src="assets/icons/categories/all/tops.png" alt="Tops">
+        </a>
+        <a href="#">
+          <img src="assets/icons/categories/all/skirts.png" alt="Skirts">
+        </a>
+        <a href="#">
+          <img src="assets/icons/categories/all/accessories.png" alt="Accessories">
+        </a>
+        <a href="#">
+          <img src="assets/icons/categories/all/jewelery.png" alt="Jewelry">
+        </a>
+        <a href="#">
+          <img src="assets/icons/categories/all/outerwear.png" alt="Outerwear">
+        </a>
+        <a href="#">
+          <img src="assets/icons/categories/all/underwear.png" alt="Underwear">
+        </a>
+        <a href="#">
+          <img src="assets/icons/categories/all/goodies.png" alt="Goodies">
+        </a>
       </section>
-    </div>
-  </main>
-  <!-- END MAIN -->
-  <!-- FOOTER -->
-  <script src="js/footer.js"></script>
-  <!-- LOAD OTHER JS -->
-  <script src="js/main.js"></script> 
-  <script src="js/accordion.js"></script>
-</body>
+      <!-- Products + Filters Layout -->
+      <div class="products-layout">
+        <!-- Filter Sidebar (desktop only) -->
+        <aside class="filter-sidebar">
+          <!-- Sidebar Heading -->
+          <h3>Filter</h3>
+          <hr>
+          <!-- Expandable Filter Categories -->
+          <ul class="filter-list">
+          <!-- ACCORDION ITEMS (DYNAMICALLY RENDERED BY JS) -->
+          <div id="filter-accordion"></div>
+        </aside>
+        <!-- ON SMALLER SCREENS TITLE SHOWS IN BANNER -->
+        <h1 class="category-mobile">All Products</h1>
+        <!-- Products Content Area -->
+        <section class="products-content">
+          <!-- Sort + Quick Filter Controls -->
+          <div class="products-controls">
+            <!-- Sort By Dropdown -->
+            <label>
+              <select name="sort-by" id="sort-by" class="dropdown">
+                <option value="" selected disabled>Sort By</option>
+                <option value="price-low-high">Price: Low to High</option>
+                <option value="price-high-low">Price: High to Low</option>
+                <option value="name-a-z">Name: A-Z</option>
+                <option value="name-z-a">Name: Z-A</option>
+              </select>
+            </label>
+            <!-- Quick Filter Dropdown -->
+            <label>
+                <select name="quick-filter" id="quick-filter" class="dropdown">
+                  <option value="" selected disabled>Quick Filter</option>
+                  <option value="popular">Popular</option>
+                  <option value="sale">Sale</option>
+                  <option value="pre-order">Pre-order</option>
+              </select>
+            </label>
+            <!-- Grid / List View Toggle -->
+            <div class="view-toggle">
+              <button aria-label="Grid view" class="icon-btn">
+                <img src="assets/icons/ui/grid-active.svg" alt="Grid View">
+              </button>
+              <button aria-label="List view" class="icon-btn">
+                <img src="assets/icons/ui/list-inactive.svg" alt="List View">
+              </button>
+            </div>
+          </div>
+
+          <!-- Total Count Display -->
+          <p class="total-count meta-text">Total: 3</p>
+
+          <!-- Product Grid -->
+          <div class="product-grid">
+            <!-- Product #1 -->
+            <div class="product">
+              <div class="product-image-wrapper">
+                <a href="product-tea-time.html"><img class="product-image" src="assets/images/products/tea-grandma-jsk2-blue.jpg" alt="Tea Time at Grandma's JSK II Blue"></a>
+                <span class="badge badge-popular">Popular</span>
+              </div>
+              <div class="product-info">
+                <p><a href="product-tea-time.html" class="product-link">Tea Time at Grandma's JSK II</a><br>
+                <strong class="price">From $110</strong></p>
+              </div>
+            </div>
+
+            <!-- Product #2 -->
+            <div class="product">
+              <div class="product-image-wrapper">
+                <a href="#"><img class="product-image" src="assets/images/products/spooky-macarons-jsk-pink.jpg" alt="My Spooky Macarons JSK Pink"></a>
+                <span class="badge badge-sale">Sale</span>
+              </div>
+              <div class="product-info">
+                <p><a href="#" class="product-link">My Spooky Macarons JSK</a><br>
+                <strong class="price">From </strong>
+                <span class="price old-price">$130</span>
+                <strong class="price new-price">$110</strong></p>
+              </div>
+            </div>
+
+            <!-- Product #3 -->
+            <div class="product">
+              <div class="product-image-wrapper">
+                <a href="#"><img class="product-image" src="assets/images/products/galaxy-witch-hair-clip.jpg" alt="Galaxy Witch Hair Clip Various Colours"></a>
+                <span class="badge badge-preorder">Pre-order</span>
+              </div>
+              <div class="product-info">
+                <p><a href="#" class="product-link">Galaxy Witch Hair Clip</a><br>
+                <strong class="price">$25</strong></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- “No more products” Statement when reach the bottom -->
+          <p class="no-more meta-text">No more products</p>
+        </section>
+      </div>
+    </main>
+    <!-- END MAIN -->
+    <!-- FOOTER -->
+    <script src="js/footer.js"></script>
+    <!-- LOAD OTHER JS -->
+    <script src="js/main.js"></script> 
+    <script src="js/accordion.js"></script>
+  </body>
 </html>
