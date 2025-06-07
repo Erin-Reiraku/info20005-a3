@@ -678,3 +678,47 @@ footer {
   align-items: center;
   gap: 0.25rem;
 }
+
+.quantity-selector {
+  display: flex;
+  width: fit-content;
+  height: 2.5rem;
+  align-items: center;
+  border: 2px solid var(--color-button-border);
+  border-radius: 1rem;
+  overflow: hidden;
+  background: #fff;
+  font-family: sans-serif;
+}
+
+.quantity-btn {
+  height: 100%;
+  min-width: 2.5rem;
+  font-weight: bold;
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quantity-btn:hover:not(:disabled) {
+  background-color: var(--color-secondary-hover);
+}
+
+.quantity-btn:disabled {
+  color: var(--color-disabled-text);
+  cursor: default;
+}
+
+.quantity-display {
+  min-height: 2.5rem;
+  min-width: 4rem;
+  text-align: center;
+  border-left: 2px solid var(--color-button-border);
+  border-right: 2px solid var(--color-button-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
