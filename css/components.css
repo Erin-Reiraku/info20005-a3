@@ -11,7 +11,6 @@ a {
   color: var(--color-hyperlink); /* prevent to use default colour for hyperlink */
 }
 
-
 header {
   margin: 0;
   font-family: var(--font-heading);
@@ -57,7 +56,7 @@ hr {
 /* Decorative banner block with rounded corners */
 .banner {
   background-image: url('../assets/images/banner-bg.png');
-  border-radius: 1vw;
+  border-radius: 1rem;
   text-align: center;
 }
 
@@ -315,7 +314,7 @@ hr {
   font-weight: 500;
 }
 
-.mobile-menu-links a{
+.mobile-menu-links a {
   color:inherit;
   text-decoration:underline;
 }
@@ -366,6 +365,13 @@ hr {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* position of badge in product image wrapper */
+.product-image-wrapper .badge {
+  position: absolute;
+  left: 0rem;
+  bottom: 1.5vw;
 }
 
 .product-image {
@@ -619,6 +625,14 @@ footer {
   border: 2px solid var(--color-button-border); /* clearer to see on the background */
 }
 
+.filter-sidebar .color-dot, 
+.status-indicator .color-dot {
+  width: 1rem;
+  height: 1rem;
+  margin: 0 0.25rem 0 0;
+  vertical-align: middle;
+}
+
 .icon-btn.color-dot:hover {
   box-shadow: 0 0 0 2px var(--color-icon-btn-hover);
 }
@@ -633,18 +647,34 @@ footer {
 }
 
 .color-dot.stock-indicator.available {
+  border-color: var(--color-primary);
   background-color: var(--color-success);
 }
 
 .color-dot.stock-indicator.unavailable {
+  border-color: var(--color-primary);
   background-color: var(--color-notification);
 }
 
-/* Color Option indicator in product page */
+/* Default Style for color preview dot */
+.color-option {
+  display: flex;
+  align-items: center; /* Align checkbox and label items in a row */
+}
+
+.color-variant-option {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+
+/* Color variant option */
 .color-variant-option > .color-option {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.25rem;
 }
-

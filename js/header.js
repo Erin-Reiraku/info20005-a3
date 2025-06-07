@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const headerHTML = `
-    <header class="navbar">
+    <header>
+      <div class="navbar">
         <div class="logo">
         <a href="index.html"><img src="assets/images/logo.png" alt="Logo"></a>
         </div>
@@ -27,6 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <button class="icon-btn hamburger" aria-label="Toggle menu">
         <img src="assets/icons/ui/hamburger.svg" alt="Menu">
         </button>
+      </div>
     <!-- OVERLAY WHEN MOBILE MENU ACTIVATES -->
     <div class="menu-overlay"></div>
     <!-- MOBILE MENU -->
