@@ -440,6 +440,7 @@ footer {
   .product-section {
     display: flex;
     margin: 0.5rem;
+    gap: 2rem;
     flex-direction: column;
     align-items: center;
   }
