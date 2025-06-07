@@ -15,7 +15,6 @@
   --color-accent: #F6D8E6;
 
   --color-success: #D6EAD6;
-  --color-success-hover: #030503;
   --color-success-active: #adcfae;
 
   --color-danger: #9A2B24;
@@ -26,6 +25,7 @@
   --color-disabled-text:#C0BCD0;
 
   --color-badge-text: #4F4963;
+  --color-badge-available: var(--color-success);
   --color-badge-popular: #C5B2E1;
   --color-badge-sale: #E9A3A3;
   --color-badge-preorder: #C6BCCF;
@@ -45,6 +45,7 @@
 
   --color-notification: #9A2B24;
   --color-button-border: var(--color-menu-bg);
+  
   --color-navbar-actions-hover: var(--color-secondary-hover);
   --color-navbar-bg-desktop: #EADDFF;
   --color-navbar-bg-mobile: var(--color-secondary);

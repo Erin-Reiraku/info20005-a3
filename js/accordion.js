@@ -25,6 +25,7 @@ const createAccordionItem = (title, name, options) => {
 
   // Accordion header: title + icons
   item.innerHTML = `
+    <!-- START ACCORDION -->
     <div class="accordion-header">
       <h3>${title}</h3>
       <button class="icon-btn accordion-open">
@@ -46,6 +47,7 @@ const createAccordionItem = (title, name, options) => {
         `).join('')}
       </div>
     </div>
+    <!-- END ACCORDION -->
   `;
 
   // Bind click event to toggle this accordion
@@ -61,7 +63,7 @@ const createAccordionItem = (title, name, options) => {
   return item;
 };
 
-/* Data definition for accordion groups */
+/* Data definition for filter accordion groups */
 const filters = [
   {
     title: "Price",
