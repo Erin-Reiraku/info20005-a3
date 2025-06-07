@@ -1,6 +1,10 @@
 /* css/theme.css
    Defines global design tokens: colors, font sizes, and other theme-related variables. */
 :root {
+  --font-body: 'Lora', serif;
+  --font-heading: 'Playfair Display', serif;
+  --font-ui: 'Inter', sans-serif;
+
   --color-primary: #6E6286;
   --color-primary-hover: #7A6FA0;
   --color-primary-active: #5A5270;
@@ -24,7 +28,7 @@
   --color-badge-text: #4F4963;
   --color-badge-popular: #C5B2E1;
   --color-badge-sale: #E9A3A3;
-  --color-badge-reservation: #C6BCCF;
+  --color-badge-preorder: #C6BCCF;
 
   --color-hyperlink: #4F4963;
   --color-hyperlink-hover: var(--color-primary);
@@ -40,7 +44,6 @@
   --color-accordion-bg: #F7F5FB;
 
   --color-notification: #9A2B24;
-  
   --color-button-border: var(--color-menu-bg);
   --color-navbar-actions-hover: var(--color-secondary-hover);
   --color-navbar-bg-desktop: #EADDFF;

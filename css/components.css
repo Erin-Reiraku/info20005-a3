@@ -1,17 +1,29 @@
 /* css/components.css 
    Contains reusable component styles such as buttons, dots, elements, product cards, and visuals. */
+body {
+  font-family: var(--font-body);
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg);
+}
+
+header {
+  margin: 0;
+  font-family: var(--font-heading);
+}
+
 h1 {
-  font-family: "Playfair Display";
+  font-family: var(--font-heading);
 }
 
 h2 {
-  font-family: "Playfair Display";
+  font-family: var(--font-heading);
   font-weight: 500;
 }
 
 h3 {
   margin: 0;
-  font-family: "Playfair Display";
+  font-family: var(--font-heading);
   font-weight: 500;
 }
 
@@ -30,10 +42,11 @@ hr {
   margin: 1rem 0;
 }
 
+/* Font for functional UI elements */
 .btn, 
-.dot {
-  /* Use sans-serif Inter for functional UI elements */
-  font-family: 'Inter', sans-serif;
+.dot,
+.badge {
+  font-family: var(--font-ui);
 }
 
 /* Decorative banner block with rounded corners */
@@ -174,7 +187,7 @@ hr {
 }
 
 .arrow-btn.disabled {
-  box-shadow: none;
+  box-shadow: none; /* disable its transition effect when hover or active */
 }
 
 
@@ -339,9 +352,16 @@ hr {
   /* Fixed width ensures consistent product card sizing across flexible grid layout */
   display: flex;
   flex-direction: column;
-  width: auto;
+  width: 14rem;
   align-items: center;
   text-align: center;
+}
+
+.product-image-wrapper {
+  width: 100%; /* follow parent */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .product-image {
@@ -349,6 +369,21 @@ hr {
   height: auto;
   display: block;
   border-radius: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .product {
+    width: 12rem;
+  }
+  .product-image {
+    width: 8rem;
+    height: auto;
+  }
+
+  .product-info {
+    max-width: 12rem;
+    width: 100%;
+  }
 }
 
 .product-info {
@@ -372,6 +407,35 @@ hr {
 
 .new-price {
   color: var(--color-notification); /* Emphasize discounted price with accent color */
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25rem 1rem;
+  font-size: 0.75rem;
+  border-radius: 0.5rem;
+  background-color: white;
+  color: var(--color-badge-text);
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.badge-popular {
+  background-color: var(--color-badge-popular);
+}
+
+.badge-sale {
+  background-color: var(--color-badge-sale);
+}
+
+.badge-preorder {
+  background-color: var(--color-badge-preorder);
+}
+
+.badge-unavailable {
+  background-color: var(--color-unavailable-bg);
 }
 
 footer {
@@ -419,7 +483,7 @@ footer {
   padding: 0.5rem 1rem;
   font-size: 1rem;
   border-radius: 0.5rem;
-  border: 1px solid #ccc;
+  border: 1px solid var(--color-button-border);
 }
 
 .dropdown:hover {
@@ -437,7 +501,7 @@ footer {
 .accordion-item {
   overflow: hidden;
   margin-bottom: 1rem; /* spacing between items */
-  border: 3px solid var(--color-menu-bg);
+  border: 3px solid var(--color-button-border);
 }
 
 /* Clickable header: flex to align title and icon */
@@ -479,5 +543,5 @@ footer {
 .color-dot {
   display: inline-block;
   border-radius: 50%;
-  border: 2px solid var(--color-menu-bg); /* clearer to see on the background */
+  border: 2px solid var(--color-button-border); /* clearer to see on the background */
 }
