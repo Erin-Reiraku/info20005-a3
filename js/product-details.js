@@ -22,6 +22,7 @@ const detailsData = [
     <ul>
         <li><strong>Blue</strong> (Rich, cool shade)</li>
         <li><strong>Pink</strong> (Pale, slightly peachy)</li>
+        <li><strong>Red</strong>  (deep wine red, elegant and bold)</li>
     </ul>
 
     <p>Colour may vary slightly due to monitor settings.</p>
@@ -103,8 +104,63 @@ const detailsData = [
     `
     },
     {
-    title: "Return",
-    html: `<p>Return available within 14 days...</p>`
+    title: "Description",
+    html: `
+      <p>
+        Inspired by the warmth of childhood afternoons and the charm of vintage parlours, 
+        <strong>“Tea Time at Grandma’s”</strong> captures a timeless moment in fabric form.
+      </p>
+      <p>
+        The print features lovingly illustrated porcelain teacups, lace-trimmed napkins, and jam-filled pastries, 
+        reminiscent of a cozy teatime ritual shared across generations. 
+        Delicate florals and antique tableware wrap the skirt in gentle nostalgia.
+      </p>
+      <p>
+        This dress was designed to evoke the feeling of being wrapped in your grandmother’s embrace – 
+        soft, sweet, and a little whimsical.
+      </p>
+      <p>
+        Whether you're hosting your own tea party or simply walking through a summer garden, 
+        this JSK invites you to slow down and sip life gently.
+      </p>
+    `
+    },
+    {
+    title: "Shipping",
+    html: `
+      <p>All items are shipped from Poland via priority tracked mail.</p>
+      <p>Processing time: <strong>2–5 business days</strong></p>
+      <p>Estimated delivery:</p>
+      <ul>
+        <li>Europe: 3–10 business days</li>
+        <li>North America: 5–15 business days</li>
+        <li>Asia & Oceania: 7–20 business days</li>
+      </ul>
+      <p>
+        Shipping costs are calculated at checkout based on your region and postal code. 
+      </p>
+      <p>
+        We offer both standard and tracked international options. 
+        For special delivery requests, please <a href="#">contact us</a>.
+      </p>
+      <p>Note: Shipping may take longer during holiday seasons or sale periods.</p>
+      <p>Tracking number will be provided upon dispatch.</p>
+    `
+    },
+    {
+        title: "Return",
+        html: `
+        <p>Returns are accepted within <strong>14 days</strong> of delivery.</p>
+        <p>Items must be:</p>
+        <ul>
+            <li>unworn and unwashed</li>
+            <li>with original tags attached</li>
+            <li>in original packaging</li>
+        </ul>
+        <p>Custom-sized or altered items are <strong>not eligible</strong> for return.</p>
+        <p>Return shipping is the responsibility of the customer unless the item is defective.</p>
+        <p>To start a return, please <a href="#">contact us</a> with your order number.</p>
+        `
     }
 ];
 
