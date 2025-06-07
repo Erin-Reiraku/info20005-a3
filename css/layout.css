@@ -397,6 +397,7 @@ footer {
   }
 }
 
+/* Desktop: Side-by-side layout for product image and details */
 .product-section {
   display: grid;
   grid-auto-flow: column;
@@ -406,9 +407,23 @@ footer {
 }
 
 @media (max-width: 1024px) {
+  /* Mobile: Stack product image and details vertically */
   .product-section {
     display: flex;
     flex-direction: column;
     align-items: center;
+    
   }
+  /* Ensure children also fill full width inside container on small screens */
+  .product-section > * {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+.product-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
 }

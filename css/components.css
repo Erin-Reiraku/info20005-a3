@@ -38,6 +38,14 @@ h3 {
   margin-top: 0.5rem;
 }
 
+.bread-crumb {
+  font-size: 0.9rem;
+}
+
+.price {
+  font-size: 1.2rem;
+}
+
 /* Horizontal divider line with spacing */
 hr {
   border: none;
@@ -704,13 +712,18 @@ footer {
 }
 
 .quantity-btn:hover:not(:disabled) {
-  background-color: var(--color-secondary-hover);
+  background-color: var(--color-icon-btn-hover);
+}
+
+.quantity-selector .quantity-btn:active:not(:disabled) {
+  background-color: var(--color-icon-btn-active);
 }
 
 .quantity-btn:disabled {
   color: var(--color-disabled-text);
   cursor: default;
 }
+
 
 .quantity-display {
   min-height: 2.5rem;
