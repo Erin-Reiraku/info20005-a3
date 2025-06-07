@@ -1,5 +1,9 @@
 /* css/layout.css 
    Handles page structure and layout such as menu positioning. */
+html {
+  overflow-y: scroll; /* force display scroll bar to unify width of pages */
+}
+
 .container {
   margin: 1.5rem 1.5rem; /* Base horizontal spacing for layout container */
 }

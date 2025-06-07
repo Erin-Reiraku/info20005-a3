@@ -214,7 +214,7 @@ hr {
 }
 
 .navbar .nav-links ul {
-  font-family: "Playfair Display";
+  font-family: var(--font-heading);
   list-style: none;
   font-size: 1.375rem;
   font-weight: 500;
@@ -437,6 +437,94 @@ hr {
 .badge-unavailable {
   background-color: var(--color-unavailable-bg);
 }
+
+.product-gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.gallery-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-inline: auto;
+}
+
+.gallery-image {
+  max-width: 20rem;
+  height: auto;
+  border-radius: 0.5rem;
+  display: block;
+}
+
+.gallery-thumbnails {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.gallery-thumbnails .arrow-btn {
+  transform: scale(0.8);
+}
+
+.thumbnail {
+  width: 4.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.thumbnail.selected {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 4px rgba(110, 98, 134, 0.25);
+}
+
+.thumbnail:hover {
+  border-color: var(--color-icon-btn-hover);
+}
+
+@media (max-width: 768px) {
+  .gallery-arrow-left,
+  .gallery-arrow-right {
+    width: 2.25rem;
+    height: 2.25rem;
+    left: -1.5rem;
+    right: -1.5rem;
+  }
+
+  .thumbnail {
+    width: 3.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-arrow-left,
+  .gallery-arrow-right {
+    width: 2.25rem;
+    height: 2.25rem;
+    left: -1.5rem;
+    right: -1.5rem;
+  }
+
+  .thumbnail {
+    width: 3.5rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
 
 footer {
   background-color: var(--color-navbar-bg-desktop);
