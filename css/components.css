@@ -724,7 +724,6 @@ footer {
   cursor: default;
 }
 
-
 .quantity-display {
   min-height: 2.5rem;
   min-width: 4rem;
@@ -735,3 +734,11 @@ footer {
   align-items: center;
   justify-content: center;
 }
+
+.product-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+}
+
