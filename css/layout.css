@@ -20,6 +20,10 @@ header {
   z-index: 100;
 }
 
+article {
+  max-width: 60rem;
+}
+
 .navbar {
   display: grid; /* Grid layout used to balance logo (left), nav links (center), and actions (right) */
   grid-template-columns: auto 1fr auto;
@@ -429,7 +433,8 @@ footer {
 
 .product-actions {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
   width: 100%;
 }
 
@@ -441,16 +446,17 @@ footer {
   box-sizing: border-box;
 }
 
-.product-description > * {
-    width: 100%;
-    max-width: 60rem;
-}
-
 @media (max-width: 1024px) {
   /* in mobile version, width become all of its container" */
   .product-container {
     width: 100%;
   }
+
+  .product-actions {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  } 
 
   /* Mobile: Stack product image and details vertically */
   .product-section {
