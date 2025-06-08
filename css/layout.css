@@ -21,7 +21,9 @@ header {
 }
 
 article {
-  max-width: 60rem;
+  width: 100%;
+  margin-inline: auto;
+  max-width: 60rem; /* limits the maximum line length to improve readability and reduce eye strain */
 }
 
 .navbar {
@@ -316,6 +318,10 @@ footer {
   }
 }
 
+.accordion-item {
+  margin-bottom: 1rem; /* spacing between items */
+}
+
 /* Desktop product layout: Sidebar + Content */
 .products-layout {
   display: flex;                 /* Layout as horizontal split */
@@ -457,6 +463,18 @@ footer {
     flex-direction: column;
     width: 100%;
   } 
+
+  /* all other buttons will be at default order */
+  .product-actions .btn {
+    order: 0;
+  }
+
+
+  /* only let dangerous bottons become last ones in column actions */
+  .product-actions .btn-danger {
+    order: 1;
+  }
+
 
   /* Mobile: Stack product image and details vertically */
   .product-section {

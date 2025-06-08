@@ -1,0 +1,87 @@
+<!-- cart.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout | Lady Sloth</title>
+    <!-- Theme Variables (colors, fonts sizing) -->
+    <link rel="stylesheet" href="css/theme.css" />
+    <!-- Reusable Components (buttons, dots, cards, etc.) -->
+    <link rel="stylesheet" href="css/components.css" />
+    <!-- Page Layout (grid, flex, sidebar positioning, etc.) -->
+    <link rel="stylesheet" href="css/layout.css" />
+    <!-- Title Fonts: Playfair Display -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Main Fonts: Lora family -->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Functional Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <!-- HEADER -->
+    <script src="js/header.js"></script>
+    <!-- START MAIN -->
+    <main class="container">
+      <!-- BREADCRUMB NAVIGATION -->
+      <div class="bread-crumb">
+        <p><a href="index.html">Home</a> &gt; Checkout</p>
+      </div>
+      <!-- PAGE TITLE -->
+      <article>
+        <h1 class="page-title">Checkout</h1>
+        <hr/>
+        <!-- ACCORDION PLACEHOLDERS -->
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <h3>Order Summary</h3>
+            <button class="icon-btn accordion-open">
+              <img src="assets/icons/ui/accordion-open.svg" alt="Expand">
+            </button>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <h3>Customer Information</h3>
+            <button class="icon-btn accordion-open">
+              <img src="assets/icons/ui/accordion-open.svg" alt="Expand">
+            </button>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <h3>Shipping Method</h3>
+            <button class="icon-btn accordion-open">
+              <img src="assets/icons/ui/accordion-open.svg" alt="Expand">
+            </button>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <h3>Payment Method</h3>
+            <button class="icon-btn accordion-open">
+              <img src="assets/icons/ui/accordion-open.svg" alt="Expand">
+            </button>
+          </div>
+        </div>
+        <!-- CHECKOUT TOTALS -->
+        <ul class="totals">
+          <li><span>Subtotal</span><span>$220.00</span></li>
+          <li><span>Shipping</span><span>$20.00</span></li>
+          <li class="total"><span>Total</span><span>$240.00</span></li>
+        </ul>
+        <hr/>
+        <!-- ACTION BUTTONS -->
+        <div class="product-actions">
+          <a href="index.html" class="btn btn-danger">Back to Homepage</a>
+          <a href="#" class="btn btn-primary">Proceed Payment</a>
+        </div>
+      </article>
+    </main>
+    <!-- END MAIN -->
+    <!-- FOOTER -->
+    <script src="js/footer.js"></script>
+    <!-- LOAD OTHER JS -->
+    <script src="js/main.js"></script> 
+  </body>
+</html>

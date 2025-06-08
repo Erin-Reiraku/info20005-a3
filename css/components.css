@@ -609,7 +609,6 @@ footer {
 /* Container for each accordion item */
 .accordion-item {
   overflow: hidden;
-  margin-bottom: 1rem; /* spacing between items */
   border: 3px solid var(--color-button-border);
 }
 
@@ -915,7 +914,10 @@ footer {
   font-size: 1rem;
 }
 
-.totals li.total {
+.totals li > span {
   font-weight: 700;
-  font-size: 1.125rem;
+}
+
+.totals li.total {
+  font-size: 1.5rem; /* Emphasise */
 }
