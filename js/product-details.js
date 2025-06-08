@@ -108,7 +108,7 @@ const detailsData = [
     html: `
       <p>
         Inspired by the warmth of childhood afternoons and the charm of vintage parlours, 
-        <strong>“Tea Time at Grandma’s”</strong> captures a timeless moment in fabric form.
+        <strong>“Tea Time at Grandma's”</strong> captures a timeless moment in fabric form.
       </p>
       <p>
         The print features lovingly illustrated porcelain teacups, lace-trimmed napkins, and jam-filled pastries, 
@@ -116,7 +116,7 @@ const detailsData = [
         Delicate florals and antique tableware wrap the skirt in gentle nostalgia.
       </p>
       <p>
-        This dress was designed to evoke the feeling of being wrapped in your grandmother’s embrace – 
+        This dress was designed to evoke the feeling of being wrapped in your grandmother's embrace - 
         soft, sweet, and a little whimsical.
       </p>
       <p>
@@ -129,18 +129,18 @@ const detailsData = [
     title: "Shipping",
     html: `
       <p>All items are shipped from Poland via priority tracked mail.</p>
-      <p>Processing time: <strong>2–5 business days</strong></p>
+      <p>Processing time: <strong>2-5 business days</strong></p>
+      <p>Pre-orders or custom-sized items: <strong>Please allow additional 4-8 weeks for production before dispatch.</strong></p>
       <p>Estimated delivery:</p>
       <ul>
-        <li>Europe: 3–10 business days</li>
-        <li>North America: 5–15 business days</li>
-        <li>Asia & Oceania: 7–20 business days</li>
+        <li>Europe: 3-10 business days</li>
+        <li>North America: 5-15 business days</li>
+        <li>Asia & Oceania: 7-20 business days</li>
       </ul>
       <p>
         Shipping costs are calculated at checkout based on your region and postal code. 
       </p>
       <p>
-        We offer both standard and tracked international options. 
         For special delivery requests, please <a href="#">contact us</a>.
       </p>
       <p>Note: Shipping may take longer during holiday seasons or sale periods.</p>
@@ -157,9 +157,11 @@ const detailsData = [
             <li>with original tags attached</li>
             <li>in original packaging</li>
         </ul>
-        <p>Custom-sized or altered items are <strong>not eligible</strong> for return.</p>
+        <p>Custom-sized or altered items are 
+          <strong class="danger">not eligible</strong> for return, <em>unless there is a quality issue or manufacturing defect.</em>
+        </p>
         <p>Return shipping is the responsibility of the customer unless the item is defective.</p>
-        <p>To start a return, please <a href="#">contact us</a> with your order number.</p>
+        <p>To start a return, please <a href="#">Contact</a> us with your order number.</p>
         `
     }
 ];
