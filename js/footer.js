@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <a href="#">
         <img src="assets/icons/ui/search.svg" alt="Search">
       </a>
-      <a href="#">
+      <a href="cart.html">
         <img src="assets/icons/ui/shopping_cart.svg" alt="Cart">
         <span class="dot">1</span>
       </a>

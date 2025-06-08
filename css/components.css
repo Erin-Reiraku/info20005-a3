@@ -568,7 +568,7 @@ footer {
 }
 
 .mobile-nav a:hover{
-  background: var(--color-navbar-actions-hover);
+  background: var(--color-icon-btn-hover);
 }
 
 .mobile-nav a .dot {
@@ -710,6 +710,15 @@ footer {
   gap: 0.25rem;
 }
 
+.size-btn {
+  padding: 0.25rem 0.5rem;
+  min-width: 3rem;
+  width: fit-content;
+  font-size: 1rem;
+  border-radius: 0.75rem;
+  background-color: var(--color-accordion-bg);
+}
+
 .quantity-selector {
   display: flex;
   width: fit-content;
@@ -800,4 +809,72 @@ footer {
     flex-basis: 40%;
     text-align: left;
   }
+}
+
+
+
+/* Cart Table Styles */
+.cart {
+  width: 100%;
+  border-collapse: collapse;
+  border: 2px solid var(--color-button-border);
+  table-layout: fixed;
+  margin-bottom: 1.5rem;
+}
+
+.cart th {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  text-align: left;
+}
+.cart-product { width: 65%; }
+.cart-details { width: 35%; }
+
+/* Cart Item Box */
+.cart-prod-box {
+  display: flex;
+  gap: 0.75rem;
+}
+.cart-prod-box img {
+  width: 5rem;
+  height: auto;
+  border: 1px solid var(--color-button-border);
+  border-radius: 0.25rem;
+}
+.cart-info .cart-name {
+  margin: 0 0 0.25rem;
+  font-weight: 500;
+}
+
+/* Cart Actions (quantity, remove, price) */
+.cart-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+/* Coupon Input */
+.coupon input {
+  margin-left: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid var(--color-button-border);
+  border-radius: 0.25rem;
+}
+
+/* Cart Totals List */
+.cart-totals {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+.cart-totals li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  font-size: 1rem;
+}
+.cart-totals li.total {
+  font-weight: 700;
+  font-size: 1.125rem;
 }
