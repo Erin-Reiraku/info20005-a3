@@ -262,10 +262,7 @@ footer {
   gap: 1rem;
   margin-top: 0;
   padding-top: 0;
-}
-
-/* Reset spacing for category links */
- 
+} 
 
 .category-bar img {
   display: block;
@@ -286,10 +283,10 @@ footer {
   margin-right: clamp(1rem, 3vw, 4rem);
 }
 
+/* Only display seperate category h1 outside banner on mobile version */
 .category-mobile {
   display: none;
 }
-
 
 @media (max-width: 1024px) {
   .category-bar {
@@ -356,8 +353,13 @@ footer {
 .view-toggle {
   display: flex;
   gap: 0.5rem;
-  margin-top: 0.75rem;
+  margin: 0.5rem 0 0.5rem 0;
   width: 100%;
+}
+
+.view-toggle .icon-btn {
+  width: 34px;
+  height: 34px;
 }
 
 /* Main content takes remaining space */

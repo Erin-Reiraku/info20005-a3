@@ -46,7 +46,6 @@
   --color-notification: #9A2B24;
   --color-button-border: var(--color-menu-bg);
   
-  --color-navbar-actions-hover: var(--color-secondary-hover);
   --color-navbar-bg-desktop: #EADDFF;
   --color-navbar-bg-mobile: var(--color-secondary);
 }

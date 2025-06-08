@@ -220,12 +220,20 @@ th, td {
   box-shadow: inset 0 0 0 5px var(--color-icon-btn-hover);
 }
 
+.arrow-btn:active img {
+  transform: scale(0.95);
+}
+
 .arrow-btn:active {
   box-shadow: inset 0 0 0 5px var(--color-icon-btn-active);
 }
 
 .arrow-btn.disabled {
   box-shadow: none; /* disable its transition effect when hover or active */
+}
+
+.arrow-btn.disabled img {
+  transform: none;
 }
 
 
@@ -297,7 +305,11 @@ th, td {
 }
 
 .navbar .nav-actions a:hover {
-  background-color: var(--color-navbar-actions-hover);
+  background-color: var(--color-icon-btn-hover);
+}
+
+.navbar .nav-actions a:active {
+  background-color: var(--color-icon-btn-active);
 }
 
 @media (max-width: 1024px) {
