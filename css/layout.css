@@ -421,6 +421,12 @@ footer {
   box-sizing: border-box;
 }
 
+.option-group.size-group,
+.size-group {
+  display: flex;
+  gap: 0.75rem;
+}
+
 .product-actions {
   display: flex;
   flex-direction: column;
@@ -469,4 +475,9 @@ footer {
   .cart {
     overflow-x: auto;
   }
+}
+
+/* Totals List */
+.totals {
+  margin: 1rem 0;
 }

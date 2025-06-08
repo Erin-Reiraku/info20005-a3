@@ -57,7 +57,7 @@ hr {
   height: 2px;
   border: none;
   background-color: black;
-  margin: 0.5rem 0;
+  margin: 1rem 0;
 }
 
 table {
@@ -715,9 +715,35 @@ footer {
   min-width: 3rem;
   width: fit-content;
   font-size: 1rem;
+  color: #fff;
   border-radius: 0.75rem;
-  background-color: var(--color-accordion-bg);
+  background-color: var(--color-secondary);
+  border: 2px solid var(--color-button-border);
+  transition:
+    background-color 200ms ease,
+    box-shadow 200ms ease,
+    transform 150ms ease;
 }
+
+.btn.size-btn:not(.selected):hover,
+.size-btn:not(.selected):hover {
+  background-color: var(--color-secondary-hover);
+  box-shadow: 0 0 0 2px var(--color-icon-btn-hover);
+}
+
+.size-btn:active {
+  box-shadow: 0 0 0 3px var(--color-secondary-active);
+  transform: scale(0.95);
+}
+
+
+.btn.size-btn.selected,
+.size-btn.selected {
+  border: 3px solid var(--color-primary-active);
+  background-color: var(--color-primary);
+}
+
+
 
 .quantity-selector {
   display: flex;
@@ -812,14 +838,15 @@ footer {
 }
 
 
-
 /* Cart Table Styles */
 .cart {
   width: 100%;
   border-collapse: collapse;
-
 }
-
+.cart th,
+.cart td {
+  padding: 0.5rem 0.5rem; 
+}
 .cart th {
   font-family: var(--font-heading);
   font-weight: 500;
@@ -840,6 +867,7 @@ footer {
 /* Cart Item Box */
 .cart-prod-box {
   display: flex;
+  align-items: center;
   gap: 1rem;
 }
 
@@ -847,7 +875,6 @@ footer {
   width: 8rem;
   height: auto;
   border-radius: 0.5rem;
-  object-fit: cover; /* avoid image being scratched */
 }
 
 /* Cart Actions (quantity, remove, price) */
@@ -878,8 +905,8 @@ footer {
 .totals {
   list-style: none;
   padding: 0;
-  margin: 1rem 0;
 }
+
 .totals li {
   display: flex;
   justify-content: space-between;
