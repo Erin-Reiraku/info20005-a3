@@ -38,17 +38,17 @@ document.addEventListener("DOMContentLoaded", () => {
         <img src="assets/icons/ui/mobile-close.svg" alt="Close">
         </button>
         <ul class="mobile-menu-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Lookbooks</a></li>
-            <li><a href="#">Events</a></li>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">Contact</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Lookbooks</a></li>
+          <li><a href="#">Events</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Contact</a></li>
         </ul>
         <div class="mobile-social">
-        <a href="#"><img src="assets/icons/ui/facebook.svg"  alt="Facebook"></a>
-        <a href="#"><img src="assets/icons/ui/instagram.svg" alt="Instagram"></a>
-        <a href="#"><img src="assets/icons/ui/mail.svg"      alt="Mail"></a>
+          <a href="#" class="icon-btn"><img src="assets/icons/ui/facebook.svg"  alt="Facebook"></a>
+          <a href="#" class="icon-btn"><img src="assets/icons/ui/instagram.svg" alt="Instagram"></a>
+          <a href="#" class="icon-btn"><img src="assets/icons/ui/mail.svg"      alt="Mail"></a>
         </div>
     </nav>
     </header>

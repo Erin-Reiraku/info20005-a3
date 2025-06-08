@@ -14,10 +14,13 @@ html {
   }
 }
 
+header {
+  position: sticky; /* stick header with its navbar to support Infinite Scroll */
+  top: 0;
+  z-index: 100;
+}
+
 .navbar {
-  position: sticky; /* stick navbar to support Infinite Scroll */
-  top: 0; /* keep stick at the top */
-  z-index: 100; /* At the top layer of regular page */
   display: grid; /* Grid layout used to balance logo (left), nav links (center), and actions (right) */
   grid-template-columns: auto 1fr auto;
   padding: 8px 16px;
