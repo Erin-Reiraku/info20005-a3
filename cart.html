@@ -37,7 +37,7 @@
       <thead>
         <tr>
           <th class="cart-product">Product</th>
-          <th class="cart-details">Details</th>
+          <th class="cart-quantity">Quantity</th>
         </tr>
       </thead>
       <tbody>
@@ -45,9 +45,9 @@
         <tr>
           <td class="cart-product">
             <div class="cart-prod-box">
-              <img src="tea.jpg" alt="Tea Time JSK" />
+              <img src="/assets/images/products-thumbnails/tea-grandma-jsk2-blue-thumb.jpg" alt="Tea Time at Grandma's JSK II Blue" />
               <div class="cart-info">
-                <p class="cart-name">Tea Time at Grandma’s – JSK II</p>
+                <p><strong>Tea Time at Grandma's - JSK II</strong></p>
                 <p>Colour: <strong>Blue</strong></p>
                 <p>Size: <strong>S</strong></p>
                 <p>Status: <strong>Ready Stock</strong></p>
@@ -65,29 +65,26 @@
               <!-- Remove Button -->
               <button class="btn btn-danger">Remove</button>
               <!-- Item Price -->
-              <p class="price">$110.00</p>
+              <br><strong class="price">$110.00</strong>
             </div>
-          </td>
-        </tr>
-        <!-- Coupon Row -->
-        <tr class="cart-coupon">
-          <td colspan="2">
-            <label class="coupon">Coupon
-              <input type="text" placeholder="Enter code" />
-            </label>
-            <button class="btn btn-secondary">Apply</button>
           </td>
         </tr>
       </tbody>
     </table>
+    <!-- Coupon Row -->
+    <div class="cart-coupon">
+      <label class="coupon"><strong>Coupon</strong>
+        <input type="text"/>
+      </label>
+      <button class="btn btn-secondary">Apply</button>
+    </div>
 
     <!-- CART TOTALS -->
-    <ul class="cart-totals">
-      <li><span>Subtotal</span><span>$220.00</span></li>
-      <li><span>Shipping</span><span>$20.00</span></li>
-      <li class="total"><span>Total</span><span>$240.00</span></li>
+    <ul class="totals">
+      <li class="total"><span>Subtotal</span><span>$220.00</span></li>
+      <li><span>Shipping will be calculated at checkout</span></li>
     </ul>
-    <hr />
+    <hr/>
 
     <!-- ACTION BUTTONS -->
     <div class="product-actions">

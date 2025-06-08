@@ -440,8 +440,6 @@ footer {
     max-width: 60rem;
 }
 
-
-
 @media (max-width: 1024px) {
   /* in mobile version, width become all of its container" */
   .product-container {
