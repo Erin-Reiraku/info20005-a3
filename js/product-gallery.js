@@ -39,8 +39,22 @@ function initializeGalleryNavigation() {
     });
 
     // Disable buttons at boundaries
-    leftBtn.classList.toggle('disabled', currentIndex === 0);
-    rightBtn.classList.toggle('disabled', currentIndex === imageData.length - 1);
+    // Update button enabled/disabled class + icon image
+        if (currentIndex === 0) {
+        leftBtn.classList.add('disabled');
+        leftBtn.querySelector('img').src = 'assets/icons/ui/left-arrow-disabled.svg';
+        } else {
+        leftBtn.classList.remove('disabled');
+        leftBtn.querySelector('img').src = 'assets/icons/ui/left-arrow-btn.svg';
+        }
+
+        if (currentIndex === imageData.length - 1) {
+        rightBtn.classList.add('disabled');
+        rightBtn.querySelector('img').src = 'assets/icons/ui/right-arrow-disabled.svg';
+        } else {
+        rightBtn.classList.remove('disabled');
+        rightBtn.querySelector('img').src = 'assets/icons/ui/right-arrow-btn.svg';
+        }
   }
 
   window.updateGalleryByColorLabel = (labelText) => {

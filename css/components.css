@@ -687,6 +687,11 @@ footer {
   vertical-align: middle;
 }
 
+.icon-btn.color-dot {
+  border: 3px solid var(--color-button-border);  /* consistant height to support effects */
+}
+
+
 .icon-btn.color-dot:hover {
   box-shadow: 0 0 0 3px var(--color-icon-btn-hover);
 }
@@ -697,7 +702,7 @@ footer {
 }
 
 .icon-btn.color-dot.selected {
-  border: 3px solid var(--color-primary);
+  border-color: var(--color-primary);
 }
 
 .color-dot.stock-indicator.available {
