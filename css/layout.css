@@ -522,8 +522,3 @@ footer {
 .thankyou-message {
   margin: 2rem 0rem;
 }
-
-/* Hide the little dot on the thank-you page */
-.thankyou-page .dot {
-  display: none;
-}

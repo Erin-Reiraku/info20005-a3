@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <a href="#"><img src="assets/icons/ui/search.svg" alt="Search"></a>
         <a href="cart.html">
             <img src="assets/icons/ui/shopping_cart.svg" alt="Shopping Cart">
+            <!-- DEFAULT CART COUNT IN DEMO PAGES -->
             <span class="dot">1</span>
         </a>
         <a href="#"><img src="assets/icons/ui/account.svg" alt="Account"></a>
