@@ -1,4 +1,4 @@
-<!-- cart.html -->
+<!-- checkout.html -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -73,15 +73,19 @@
         <hr/>
         <!-- ACTION BUTTONS -->
         <div class="product-actions">
-          <a href="index.html" class="btn btn-danger">Back to Homepage</a>
-          <a href="#" class="btn btn-primary">Proceed Payment</a>
+          <a href="index.html"
+            class="btn btn-danger"
+            onclick="return confirm('Are you sure you want to leave the checkout page? Your order won\'t be saved.');">
+            Back to Homepage
+          </a>
+          <a href="thankyou.html" class="btn btn-primary">Proceed Payment</a>
         </div>
       </article>
     </main>
     <!-- END MAIN -->
     <!-- FOOTER -->
     <script src="js/footer.js"></script>
-    <!-- LOAD OTHER JS -->
+    <!-- MAIN JS -->
     <script src="js/main.js"></script> 
   </body>
 </html>

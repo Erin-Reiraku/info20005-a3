@@ -515,8 +515,12 @@ th, td {
   width: 4.5rem;
   border-radius: 0.5rem;
   cursor: pointer;
-  border: 2px solid transparent;
+  border: 3px solid transparent;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.thumbnail:hover {
+  border-color: var(--color-icon-btn-hover);
 }
 
 .thumbnail.selected {
@@ -920,4 +924,17 @@ footer {
 
 .totals li.total {
   font-size: 1.5rem; /* Emphasise */
+}
+
+/* center any block of text */
+.thankyou-message {
+  text-align: center;
+}
+
+.thankyou-illustration {
+  text-align: center;
+}
+.thankyou-illustration img {
+  max-width: 15rem;
+  height: auto;
 }
