@@ -10,6 +10,10 @@ function initializeVariantSelectors() {
       const label = dot.parentElement.querySelector('.color-label')?.textContent.trim() || 'None';
       document.getElementById('selected-color-label').textContent = label;
       updateActionButtons();
+      // update gallery logic
+      if (window.updateGalleryByColorLabel) {
+        window.updateGalleryByColorLabel(label);
+      }
     });
   });
 
@@ -95,7 +99,8 @@ function initializeAddToCart() {
 
     // generate product id (based on slug + colour)
     const baseSlug = page.replace('.html', '').replace('product-', '');
-    const productId = `${baseSlug}-${colorLabel.toLowerCase()}`;
+    const variantKey = `${colorLabel}-${selectedSize}`.toLowerCase().replace(/\s+/g, '-');
+    const productId = `${baseSlug}-${variantKey}`;
 
     // build cart item object
     const item = {
@@ -106,7 +111,6 @@ function initializeAddToCart() {
       qty:     getProductQuantity(), // use selected quantity
       colour:  colorLabel,
       size:    selectedSize,
-      variant: `${colorLabel} / ${selectedSize}`,
       page:    page,
       status:  statusTxt
     };
@@ -151,7 +155,8 @@ function initializeBuyNow() {
 
     // generate product id
     const baseSlug = page.replace('.html', '').replace('product-', '');
-    const productId = `${baseSlug}-${colorLabel.toLowerCase()}`;
+    const variantKey = `${colorLabel}-${selectedSize}`.toLowerCase().replace(/\s+/g, '-');
+    const productId = `${baseSlug}-${variantKey}`;
 
     // build cart item
     const item = {
@@ -162,7 +167,6 @@ function initializeBuyNow() {
       qty:     getProductQuantity(),
       colour:  colorLabel,
       size:    selectedSize,
-      variant: `${colorLabel} / ${selectedSize}`,
       page:    page,
       status:  statusTxt
     };
