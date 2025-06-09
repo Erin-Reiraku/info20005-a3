@@ -74,11 +74,7 @@
         <hr/>
         <!-- ACTION BUTTONS -->
         <div class="product-actions">
-          <a href="index.html"
-            class="btn btn-danger"
-            onclick="return confirm('Are you sure you want to leave the checkout page? Your order won\'t be saved.');">
-            Back to Homepage
-          </a>
+          <a href="index.html" class="btn btn-danger">Back to Homepage</a>
           <a href="thankyou.html" class="btn btn-primary">Proceed Payment</a>
         </div>
       </article>
@@ -88,7 +84,11 @@
     <script src="js/footer.js"></script>
     <!-- MAIN JS -->
     <script src="js/main.js"></script>
-    <!-- LOAD CART STORAGE TO 0 AND UPDATE DOT -->
+    <!-- LOAD CART STORAGE AND UPDATE DOT -->
     <script src="js/cart-storage.js"></script>
+    <!-- CALCULATE TOTAL PRICE (BEFORE CLEAR CART STORAGE), ASSUME SHIPPING ALWAYS BE 20 -->
+    <script src="js/checkout-totals.js"></script>
+    <!-- UNLOAD WARNING WHEN SWITCH PAGE -->
+    <script src="js/unload-warning.js"></script>
   </body>
 </html>

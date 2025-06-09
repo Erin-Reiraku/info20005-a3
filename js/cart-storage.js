@@ -9,6 +9,8 @@
   // save items array to localStorage
   function saveCartItems(items) {
     localStorage.setItem('cartItems', JSON.stringify(items));
+    const subtotal = items.reduce((sum, i) => sum + i.price * i.qty, 0);
+    localStorage.setItem('cartSubtotal', subtotal.toFixed(2));
   }
 
   // update cart badge in header/footer
@@ -41,59 +43,69 @@
 
   // render cart table; assumes <tbody id="cart-items">
   function renderCart() {
-    const tbody = document.getElementById('cart-items');
-    if (!tbody) return;
+  const tbody = document.getElementById('cart-items');
+  if (!tbody) return;
 
-    const items = getCartItems();
-    tbody.innerHTML = '';
+  const items = getCartItems();
+  tbody.innerHTML = '';
 
-    items.forEach(item => {
-      // fallback for legacy variant field
-      let colour = item.colour, size = item.size;
-      if ((!colour || !size) && item.variant) {
-        const [c, s] = item.variant.split('/').map(x => x.trim());
-        colour = colour || c;
-        size   = size   || s;
-      }
-      const status = item.status || '';
+  let subtotal = 0;
 
-      const tr = document.createElement('tr');
-      tr.innerHTML = `
-        <td class="cart-product">
-          <div class="cart-prod-box">
-            <a href="${item.page}">
-              <img src="${item.thumb}" alt="${item.title}" />
-            </a>
-            <div class="cart-info">
-              <p><a href="${item.page}"><strong>${item.title}</strong></a></p>
-              <p>Colour: <strong>${colour}</strong></p>
-              <p>Size:   <strong>${size}</strong></p>
-              <p>Status: <strong>${status}</strong></p>
-            </div>
+  items.forEach(item => {
+    // fallback for legacy variant field
+    let colour = item.colour, size = item.size;
+    if ((!colour || !size) && item.variant) {
+      const [c, s] = item.variant.split('/').map(x => x.trim());
+      colour = colour || c;
+      size   = size   || s;
+    }
+    const status = item.status || '';
+    const itemTotal = item.qty * item.price;
+    subtotal += itemTotal;
+
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td class="cart-product">
+        <div class="cart-prod-box">
+          <a href="${item.page}">
+            <img src="${item.thumb}" alt="${item.title}" />
+          </a>
+          <div class="cart-info">
+            <p><a href="${item.page}"><strong>${item.title}</strong></a></p>
+            <p>Colour: <strong>${colour}</strong></p>
+            <p>Size:   <strong>${size}</strong></p>
+            <p>Status: <strong>${status}</strong></p>
           </div>
-        </td>
-        <td class="cart-quantity">
-          <div class="cart-actions">
-            <div class="quantity-selector">
-              <button class="quantity-btn" data-id="${item.id}" data-delta="-1">−</button>
-              <span class="quantity-display">${item.qty}</span>
-              <button class="quantity-btn" data-id="${item.id}" data-delta="1">+</button>
-            </div>
-            <button class="btn btn-danger" data-remove-id="${item.id}">Remove</button>
-            <br><strong class="price">$${(item.price * item.qty).toFixed(2)}</strong>
+        </div>
+      </td>
+      <td class="cart-quantity">
+        <div class="cart-actions">
+          <div class="quantity-selector">
+            <button class="quantity-btn" data-id="${item.id}" data-delta="-1">-</button>
+            <span class="quantity-display">${item.qty}</span>
+            <button class="quantity-btn" data-id="${item.id}" data-delta="1">+</button>
           </div>
-        </td>
-      `;
-      tbody.appendChild(tr);
-    });
+          <button class="btn btn-danger" data-remove-id="${item.id}">Remove</button>
+          <br><strong class="price">$${itemTotal.toFixed(2)}</strong>
+        </div>
+      </td>
+    `;
+    tbody.appendChild(tr);
+  });
 
-    updateCartBadge(items.reduce((sum, i) => sum + i.qty, 0));
+  // update subtotal in <ul class="totals">
+  const subtotalEl = document.querySelector('.totals li span:last-child');
+  if (subtotalEl) {
+    subtotalEl.textContent = `$${subtotal.toFixed(2)}`;
   }
+
+  updateCartBadge(items.reduce((sum, i) => sum + i.qty, 0));
+}
 
   // initialize: renderCart, update badge on all pages, bind cart events
   document.addEventListener('DOMContentLoaded', () => {
     const page = location.pathname.split('/').pop();
-    if (page === 'checkout.html' || page === 'thankyou.html') {
+    if (page === 'thankyou.html') { // when complete payment, clear localStorage
       saveCartItems([]);            // clear cartItems of localStorage
       updateCartBadge(0);           // update badge to 0
     }
