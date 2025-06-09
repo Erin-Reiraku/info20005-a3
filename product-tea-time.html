@@ -80,7 +80,7 @@
               <h2>Colour</h2>
               <div class="color-variant-option">
                 <div class="color-option">
-                  <div class="icon-btn color-dot selected" style="background-color: #3c5e90;"></div>
+                  <div class="icon-btn color-dot" style="background-color: #3c5e90;"></div>
                   <span class="color-label">Blue</span>
                 </div>
                 <div class="color-option">
@@ -92,7 +92,7 @@
                   <span class="color-label">Red</span>
                 </div>
               </div>
-              <p class="meta-text">Selected: Blue</p>
+              <p class="meta-text">Selected: <span id="selected-color-label"></span></p>
             </section>
             <hr>
 
@@ -100,13 +100,13 @@
             <section class="product-option">
               <h2>Size</h2>
               <div class="option-group size-group">
-                <button class="btn size-btn selected">S</button>
+                <button class="btn size-btn">S</button>
                 <button class="btn size-btn" disabled>M</button>
                 <button class="btn size-btn">L</button>
                 <button class="btn size-btn">XL</button>
                 <button class="btn size-btn">2XL</button>
               </div>
-              <p class="meta-text">Selected: S</p>
+              <p class="meta-text">Selected: <span id="selected-size-label"></span></p>
               <p>
                 See <a href="#size">Size</a> section below for more information.<br>
                 For custom sizes, please <a href="#">Contact</a> us.
@@ -130,8 +130,8 @@
             <br>
             <!-- Action Buttons -->
             <div class="product-actions">
-              <a href="checkout.html" class="btn btn-primary">Buy Now</a>
-              <button id="btn-add-to-cart" class="btn btn-secondary">Add to Cart</button>
+              <button id="btn-buy-now" class="btn btn-primary" disabled>Buy Now</button>
+              <button id="btn-add-to-cart" class="btn btn-secondary" disabled>Add to Cart</button>
             </div>
           </div>
         </section>
