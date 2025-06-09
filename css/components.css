@@ -236,7 +236,6 @@ th, td {
   transform: none;
 }
 
-
 .dot {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   position: absolute;
@@ -370,7 +369,7 @@ th, td {
   display: block;
 }
 
-.hero {
+.hero-banner {
   padding: 6vw 4vw;
 }
 
@@ -384,6 +383,26 @@ th, td {
 .hero p {
   padding-inline: clamp(60px, 14vw, 90px);   /* padding between text and arrow buttons */
 }
+
+.hero-indicators {
+  padding: 0.25rem 0.5rem;
+  border: 1px solid var(--color-button-border);
+  border-radius: 9999px; /* capsule shape */
+  background-color: lightgrey;
+}
+
+.hero-indicators .indicator {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  background-color: gray;
+  transition: background-color 200ms ease;
+}
+
+.hero-indicators .indicator.active {
+  background-color: black;
+}
+
 
 .product {
   /* Fixed width ensures consistent product card sizing across flexible grid layout */
