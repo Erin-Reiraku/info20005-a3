@@ -13,25 +13,28 @@
 
   // update cart badge in header/footer
   function updateCartBadge(count) {
-    document.querySelectorAll('.nav-actions .dot, .mobile-nav .dot').forEach(dot => {
-      if (count > 0) {
-        dot.textContent   = count;
-        dot.style.display = 'inline-flex';
-      } else {
-        dot.style.display = 'none';
-      }
-    });
+    document.querySelectorAll('.nav-actions .dot, .mobile-nav .dot')
+      .forEach(dot => {
+        if (count > 0) {
+          dot.textContent   = count;
+          dot.style.display = 'inline-flex';
+        } else {
+          dot.style.display = 'none';
+        }
+      });
   }
 
   // add an item (or increase qty) and refresh badge
   function addToCart(item) {
     const items = getCartItems();
     const idx   = items.findIndex(i => i.id === item.id);
+
     if (idx > -1) {
       items[idx].qty += item.qty;
     } else {
       items.push(item);
     }
+
     saveCartItems(items);
     updateCartBadge(items.reduce((sum, i) => sum + i.qty, 0));
   }
@@ -45,7 +48,7 @@
     tbody.innerHTML = '';
 
     items.forEach(item => {
-      // handle missing old-variant data
+      // fallback for legacy variant field
       let colour = item.colour, size = item.size;
       if ((!colour || !size) && item.variant) {
         const [c, s] = item.variant.split('/').map(x => x.trim());
@@ -87,10 +90,21 @@
     updateCartBadge(items.reduce((sum, i) => sum + i.qty, 0));
   }
 
-  // init: render & delegate qty/remove buttons
+  // initialize: renderCart, update badge on all pages, bind cart events
   document.addEventListener('DOMContentLoaded', () => {
+    const page = location.pathname.split('/').pop();
+    if (page === 'checkout.html' || page === 'thankyou.html') {
+      saveCartItems([]);            // clear cartItems of localStorage
+      updateCartBadge(0);           // update badge to 0
+    }
+
     renderCart();
 
+    // always refresh badge even on non-cart pages
+    const total = getCartItems().reduce((sum, i) => sum + i.qty, 0);
+    updateCartBadge(total);
+
+    // delegate quantity +/- and remove on cart page
     const tbody = document.getElementById('cart-items');
     tbody?.addEventListener('click', e => {
       const btn    = e.target.closest('button');
@@ -114,7 +128,7 @@
     });
   });
 
-  // expose API
+  // expose API for external use
   window.getCartItems    = getCartItems;
   window.saveCartItems   = saveCartItems;
   window.updateCartBadge = updateCartBadge;
