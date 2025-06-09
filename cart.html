@@ -38,38 +38,8 @@
               <th class="cart-quantity">Quantity</th>
             </tr>
           </thead>
-          <tbody>
-            <!-- Cart Item -->
-            <tr>
-              <td class="cart-product">
-                <div class="cart-prod-box">
-                  <a href="product-tea-time.html">                              
-                    <img src="assets/images/products-thumbnails/tea-grandma-jsk2-blue-thumb.jpg" alt="Tea Time at Grandma's JSK II Blue" />
-                  </a>
-                  <div class="cart-info">
-                    <p><a href="product-tea-time.html"><strong>Tea Time at Grandma's - JSK II</strong></a></p>
-                    <p>Colour: <strong>Blue</strong></p>
-                    <p>Size: <strong>S</strong></p>
-                    <p>Status: <strong>Ready Stock</strong></p>
-                  </div>
-                </div>
-              </td>
-              <td class="cart-details">
-                <div class="cart-actions">
-                  <!-- Quantity Selector -->
-                  <div class="quantity-selector">
-                    <button class="quantity-btn" disabled>-</button>
-                    <span class="quantity-display">1</span>
-                    <button class="quantity-btn">+</button>
-                  </div>
-                  <!-- Remove Button -->
-                  <button class="btn btn-danger">Remove</button>
-                  <!-- Item Price -->
-                  <br><strong class="price">$110.00</strong>
-                </div>
-              </td>
-            </tr>
-          </tbody>
+          <!-- TABLE BODY DYNAMICALLY RENDERED BY JS -->
+          <tbody id="cart-items"></tbody>
         </table>
         <!-- Coupon Row -->
         <div class="cart-coupon">
@@ -96,5 +66,7 @@
     <script src="js/footer.js"></script>
     <!-- MAIN JS -->
     <script src="js/main.js"></script> 
+    <!-- 在 header.js、footer.js 之后，加在 body 最后 -->
+    <script src="js/cart-storage.js"></script>
   </body>
 </html>
