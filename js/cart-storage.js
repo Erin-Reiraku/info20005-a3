@@ -125,12 +125,30 @@
       const remove = btn?.dataset.removeId;
 
       if (id && !isNaN(delta)) {
-        const items = getCartItems().map(i => {
-          if (i.id === id) i.qty = Math.max(1, i.qty + delta);
-          return i;
-        });
+        const items = getCartItems();
+        const index = items.findIndex(i => i.id === id);
+        if (index === -1) return;
+
+        // Update quantity in storage
+        items[index].qty = Math.max(1, items[index].qty + delta);
         saveCartItems(items);
-        return renderCart();
+
+        // Update only affected DOM row
+        const row = btn.closest('tr');
+        row.querySelector('.quantity-display').textContent = items[index].qty;
+        row.querySelector('[data-delta="-1"]').disabled = items[index].qty === 1;
+        row.querySelector('.price').textContent = `$${(items[index].qty * items[index].price).toFixed(2)}`;
+
+        // Update subtotal display
+        const subtotalEl = document.querySelector('.totals li span:last-child');
+        if (subtotalEl) {
+          const subtotal = items.reduce((sum, i) => sum + i.price * i.qty, 0);
+          subtotalEl.textContent = `$${subtotal.toFixed(2)}`;
+        }
+
+        // Update cart badge
+        updateCartBadge(items.reduce((sum, i) => sum + i.qty, 0));
+        return;
       }
 
       if (remove) {

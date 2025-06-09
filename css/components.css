@@ -760,14 +760,14 @@ footer {
 }
 
 .size-btn:active {
-  box-shadow: 0 0 0 3px var(--color-secondary-active);
+  box-shadow: 0 0 0 2px var(--color-secondary-active);
   transform: scale(0.95);
 }
 
 
 .btn.size-btn.selected,
 .size-btn.selected {
-  border: 3px solid var(--color-primary-active);
+  border: 2px solid var(--color-primary-active);
   background-color: var(--color-primary);
 }
 
