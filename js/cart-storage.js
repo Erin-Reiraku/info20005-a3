@@ -81,7 +81,7 @@
       <td class="cart-quantity">
         <div class="cart-actions">
           <div class="quantity-selector">
-            <button class="quantity-btn" data-id="${item.id}" data-delta="-1">-</button>
+            <button class="quantity-btn" data-id="${item.id}" data-delta="-1" ${item.qty === 1 ? 'disabled' : ''}>-</button>
             <span class="quantity-display">${item.qty}</span>
             <button class="quantity-btn" data-id="${item.id}" data-delta="1">+</button>
           </div>
@@ -134,6 +134,8 @@
       }
 
       if (remove) {
+        const confirmDelete = confirm('Are you sure you want to remove this item from your cart?');
+        if (!confirmDelete) return; // won't remove if user didn't confirm
         saveCartItems(getCartItems().filter(i => i.id !== remove));
         renderCart();
       }
